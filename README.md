@@ -1,10 +1,5 @@
-# Valida datos de tarjetas de crédito
-
-* **Track:** _Common Core_
-* **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_
-* **Unidad:** _Producto final_
-
-***
+# VALIDADOR DE TARJETAS
+Plugin capaz de verificar la validez de cualquier tarjeta a partir del nombre, número de tarjeta, fecha de expiración y código de validación.
 
 El plugin debe recibir una referencia a un elemento del DOM que contenga
 `<input>`s con los siguientes nombres (atributo `name`):
@@ -14,43 +9,28 @@ El plugin debe recibir una referencia a un elemento del DOM que contenga
 * `cvv` (Card Verification Value): Código de validación de 3 dígitos
 * `name`: Nombre completo como aparece en la tarjeta
 
-## Ejemplo
+Al hacer las validaciones, la librería añade la clase `.error` a los `<input>`s que no pasen la validación, o la clase `.success` en caso de que sí pase.
 
-```html
-<form>
-  <div class="form-group">
-    <label for="cn">Número de tarjeta</label>
-    <input id="cn" name="cn" />
-  </div>
-  <div class="form-group">
-    <label for="exp">Fecha de vencimiento</label>
-    <input id="exp" name="exp" />
-  </div>
-  <div class="form-group">
-    <label for="cvv">CVV</label>
-    <input id="cvv" name="cvv" />
-  </div>
-  <div class="form-group">
-    <label for="name">Nombre completo</label>
-    <input id="name" name="name" />
-  </div>
-  <input type="submit" value="Pagar" />
-</form>
-```
+## El Reto
 
-```js
-const form = document.querySelector('form');
+Desarrollar una libreria Javascript que permita verificar la validez de una tarjeta
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (validateCardDetails(form)) {
-    console.log('datos válido... enviar...');
-  } else {
-    console.log('datos inválidos');
-  }
-});
-```
+## Requerimientos Técnicos
 
-A la hora de hacer las validaciones, la librería debería de añadir la clase
-`.error` a los `<input>`s que no pasen la validación, o la clase `.success`
-en caso de que sí pase.
+El proyecto está realizado con las siguientes dependencias NPM:
+
++ Dependencias de Desarrollo
+	- Babel ~v.6.26.0
+	- esLint ~v.4.15.0
+
+## Levantamiento ambiente de desarrollo
+
+
++ Clonar repositorio.
++ Posicionado en nuestro proyecto hacer correr `npm install` para descargar e instalar todas las dependencias utilizadas.
+
+
+
+
+
+
