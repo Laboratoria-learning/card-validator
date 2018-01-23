@@ -1,0 +1,28 @@
+{
+  "name": "card-validator",
+  "version": "1.0.0",
+  "description": "Validador de tarjetas de crédito por medio del algoritmo de Luhn\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cynthia1171/card-validator.git"
+  },
+  "author": "Cynthia Isla - Carol Martínez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cynthia1171/card-validator/issues"
+  },
+  "homepage": "https://github.com/cynthia1171/card-validator#readme",
+  "dependencies": {
+    "jquery": "^3.3.0",
+    "materialize-css": "^0.100.2",
+    "mocha": "^5.0.0",
+    "chai": "^4.1.2",
+    "eslint": "^4.15.0",
+    "eslint-config-google": "^0.9.1"
+
+  }
+}
