@@ -1,56 +1,32 @@
-# Valida datos de tarjetas de crédito
+# Validador de Tarjetas de Crédito
 
-* **Track:** _Common Core_
-* **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_
-* **Unidad:** _Producto final_
+* **Sprint:** 5
+
 
 ***
 
-El plugin debe recibir una referencia a un elemento del DOM que contenga
-`<input>`s con los siguientes nombres (atributo `name`):
 
-* `cn` (Card Number): El número de la tarjeta de crédito
-* `exp` (Expiry Date): Fecha de expiración
-* `cvv` (Card Verification Value): Código de validación de 3 dígitos
-* `name`: Nombre completo como aparece en la tarjeta
+## Reto
 
-## Ejemplo
+Crear una librería de JavaScript que permita la validación de una tarjeta de crédito.
 
-```html
-<form>
-  <div class="form-group">
-    <label for="cn">Número de tarjeta</label>
-    <input id="cn" name="cn" />
-  </div>
-  <div class="form-group">
-    <label for="exp">Fecha de vencimiento</label>
-    <input id="exp" name="exp" />
-  </div>
-  <div class="form-group">
-    <label for="cvv">CVV</label>
-    <input id="cvv" name="cvv" />
-  </div>
-  <div class="form-group">
-    <label for="name">Nombre completo</label>
-    <input id="name" name="name" />
-  </div>
-  <input type="submit" value="Pagar" />
-</form>
-```
+## Consideraciones
 
-```js
-const form = document.querySelector('form');
+* El proyecto está compuesto por una serie de archivos entre los cuales se
+encuentra el archivo base `index.html`, así como también el `index.js`.
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (validateCardDetails(form)) {
-    console.log('datos válido... enviar...');
-  } else {
-    console.log('datos inválidos');
-  }
-});
-```
+## A tener en cuenta:
 
-A la hora de hacer las validaciones, la librería debería de añadir la clase
-`.error` a los `<input>`s que no pasen la validación, o la clase `.success`
-en caso de que sí pase.
+- Requerimientos Técnicos:
+
+El proyecto fue realizado con las siguientes dependencias NPM:
+
++ Dependencias de Desarrollo:
+  - Chai
+  - Mocha
++ Dependencias de Producción:
+  - jQuery ~v.3.2.1
+  - Bootstrap ~v.4.0.0
+
+Clonar repositorio.
+Posicionado en nuestro proyecto hacer correr npm installpara descargar e instalar todas las dependencias utilizadas.

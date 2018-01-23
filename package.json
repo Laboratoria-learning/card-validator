@@ -1,0 +1,35 @@
+{
+  "name": "card-validator",
+  "version": "1.0.0",
+  "description": "Credit Card Validator",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IsmaryAlvarez/card-validator.git"
+  },
+  "keywords": [
+    "Card",
+    "Validator"
+  ],
+  "author": "Ismary Alvarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IsmaryAlvarez/card-validator/issues"
+  },
+  "homepage": "https://github.com/IsmaryAlvarez/card-validator#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.15.0",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "chai": "^4.1.2",
+    "jquery": "^3.2.1"
+  }
+}
