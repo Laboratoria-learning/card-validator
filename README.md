@@ -54,3 +54,62 @@ form.addEventListener('submit', (e) => {
 A la hora de hacer las validaciones, la librería debería de añadir la clase
 `.error` a los `<input>`s que no pasen la validación, o la clase `.success`
 en caso de que sí pase.
+
+## Snippets
+
+* Función para validar código de validación de 3 dígitos
+ : La siguiente función se encarga de validar mediante condiciones de longitud
+   y tipo de datos que él usuario sólo ingrese 3 números. Si el usuario ingresa
+   3 números la variable `validThree` tendrá como valor `true`, si ingresa menos
+   números o algo diferente a lo que se le solicita la variable `validThree`
+   será igual a `false` y si sobrepasa la longitud de `3` dígitos se disparará
+   un `alert` con el mensaje `No debe exceder los 3 dígitos`.
+
+   Snippets:
+   ~~~
+   inputCvvElement.val() //  '586'
+
+   inputCvvElement.keyup(cvvValidation);
+
+   //  validThree = true
+   ~~~
+
+   ~~~
+   inputCvvElement.val() //  '58'
+
+   inputCvvElement.keyup(cvvValidation);
+
+   //  validThree = false
+   ~~~
+
+   * Función para validar nombre completo
+    : La siguiente función se encarga de validar mediante condiciones dónde
+      se testean los datos y se verifica la longitud del mismo. Si el usuario
+      ingresa alguna palabra no menos a `3` letras, la variable `validFour`
+      tendrá como valor `true`, si ingresa menos letras o algo diferente
+      a lo que se le solicitó la variable `validFour` será igual a `false`.
+
+      Snippets:
+      ~~~
+      inputNameElement.val() //  'Ana Torres Paredes'
+
+      inputNameElement.keyup(nameValidation);
+
+      //  validFour = true
+      ~~~
+
+      ~~~
+      inputNameElement.val() //  'An'
+
+      inputNameElement.keyup(nameValidation);
+
+      //  validFour = false
+      ~~~
+
+      ~~~
+      inputNameElement.val() //  '4255'
+
+      inputNameElement.keyup(nameValidation);
+
+      //  validFour = false
+      ~~~

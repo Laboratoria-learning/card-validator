@@ -7,14 +7,19 @@ function begin() {
   let cvvValidation = () => {
     let $input = $('#input-cvv');
     let $inputVal = $('#input-cvv').val();
-    if ($inputVal.length === 3) {
+    let regex = /^[0-9]+$/;
+    let testInput = regex.test($inputVal);
+    if (testInput === true && $inputVal.length === 3) {
       validThree = true;
       console.log(validThree);
-    } else if ($inputVal.length > 3) {
+    } else if ($inputVal.length > 3 || testInput === false) {
       validThree = false;
-      alert('No debe exceder los 3 dígitos');
       console.log(validThree);
       $input.val('');
+      alert(`
+        * No debes de exceder los 3 dígitos.
+        * No debe ingresar texto.
+        `);
     } else {
       validThree = false;
       console.log(validThree);
