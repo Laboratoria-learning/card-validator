@@ -1,0 +1,28 @@
+.title-back {
+  background: rgb(37, 22, 101);
+}
+
+.title {
+  color: #ffff;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.icon-card {
+  margin: 40px 0 50px 0;
+  width: 200px;
+}
+
+.margin {
+  width: 50%;
+}
+
+.btn {
+  background: rgb(227, 111, 5);
+  margin-top: 30px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
