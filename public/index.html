@@ -1,51 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- - - - - - - - - - - - - - - - - - - - HEAD - - - - - - - - - - - - - - - - - - -  -->
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="../public/css/main.css">
-  <title>Título de mi página web</title>
+  <title>Card Validator</title>
 </head>
 <!-- - - - - - - - - - - - - - - - - - - - BODY - - - - - - - - - - - - - - - - - - -  -->
+
 <body>
+  <!-- Barra de navegación -->
+  <nav class="navbar justify-content-center">
+    <a href="#">
+      <img src="assets/img/logo.png" width="65" height="65" class="d-inline-block align-top" alt="">
+      <span> </span>
+      Card Validator
+    </a>
+  </nav>
 
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">Tarjeta de Credito válida
-      </a>
-    </nav>
-
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-4">
-          <form>
-            <!--cn = cardNumber-->
-            <div class="form-group">
-              <label for="cn">Número de tarjeta</label>
-              <input id="cn" name="cn" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="14"/>
-            </div>
-            <!--exp = cardExpiry-->
-            <div class="form-group">
-              <label for="exp">Fecha de vencimiento</label>
-              <input id="exp" name="exp" />
-            </div>
-            <!--cvv = cardCVC-->
-            <div class="form-group">
-              <label for="cvv">CVV</label>
-              <input id="cvv" name="cvv" placeholder="XXX" maxlength="3"/>
-            </div>
-            <div class="form-group">
-              <label for="name">Nombre completo</label>
-              <input type="text" id="name" name="name" />
-            </div>
-            <input type="submit" value="Pagar" />
-          </form>
+  <!-- Descripción de la librería -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 info-container">
+        <div class="row">
+          <div class="col-12">
+            <p class="info-text text-center intro">
+              Card Validator es un plugin de Javascript que valida datos ingresados en formularios de tarjetas de débito y crédito
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4 class="text-center">¿Cómo funciona?</h4>
+            <p class="info-text text-center">
+              Esta librería valida el número de tarjeta de crédito (usando el Algoritmo de Luhn), fecha de vencimiento, codigo de verificación
+              (cvv) y nombre completo que aparece en la tarjeta.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4 class="text-center">Snippets</h4>
+            <p class="info-text text-center">
+              PENDIENTE
+            </p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- Formulario demo -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-5">
+        <h4 class="text-center">Pruébalo</h4>
+        <form>
+          <!--cn = cardNumber-->
+          <div class="form-group">
+            <label for="cn">Número de tarjeta</label>
+            <input id="cn" name="cn" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16" />
+          </div>
+          <!--exp = cardExpiry-->
+          <div class="form-group">
+            <label for="exp">Fecha de vencimiento</label>
+            <input id="exp" name="exp" placeholder="mm/aa" />
+          </div>
+          <!--cvv = cardCVC-->
+          <div class="form-group">
+            <label for="cvv">Código de seguridad (CVV)</label>
+            <input id="cvv" name="cvv" placeholder="XXX" maxlength="3" />
+          </div>
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <input class="btn btn-info disabled" type="submit" value="Pagar" />
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!--
   <div class="container">
     <div class="panel panel-default credit-card-box customwidth center-block">

@@ -9,17 +9,9 @@
 ## Plan de Organización
 [Tablero público](https://trello.com/b/w8PlFEgb/sprint-4-producto-final) en Trello donde se puede hacer seguimiento de nuestro avance diario y deadlines establecidos.
 
-![trello](assets/img/trello-v1.png)
+![trello](public/assets/img/trello-v1.png)
 
 ## Características
-El plugin debe recibir una referencia a un elemento del DOM que contenga
-`<input>`s con los siguientes nombres (atributo `name`):
-
-* `cn` (Card Number): El número de la tarjeta de crédito
-* `exp` (Expiry Date): Fecha de expiración
-* `cvv` (Card Verification Value): Código de validación de 3 dígitos
-* `name`: Nombre completo como aparece en la tarjeta
-
 El plugin debe recibir una referencia a un elemento del DOM que contenga
 `<input>`s con los siguientes nombres (atributo `name`):
 
