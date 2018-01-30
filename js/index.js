@@ -1,8 +1,49 @@
 $('document').ready(begin);
 
 function begin() {
+  let validOne = false; //
+  let validTwo = false; //
   let validThree = false;
   let validFour = false;
+  
+  // validar número de tarjeta crédito
+  let isValidCard = () => {
+    // Ingresamos numero de tarjeta Ejemplo:(4551038207641635) validar metodo lungt
+    let numCard = $('#num-card'); // 1° llamo a la etiqueta input
+    let numCardVal = numCard.val(); // 2° guarda el valor del input 
+    let numArray = numCardVal.split(''); 
+    let numReverse = numArray.reverse(); 
+    // variable donde estara almacenado temporalmente el nuevo numero convertido a entero 
+    let numInteger = 0; 
+    let sumPar = 0; 
+    let sumImpar = 0; 
+    // Se creara un for para iterar cada numero de la tarjeta ingresada 
+    for (let i = 0; i < numReverse.length; i++) { 
+      numInteger = parseInt(numReverse[i]); 
+      if ((i + 1) % 2 === 0) { 
+        if ((numInteger * 2) >= 10) { 
+          sumPar += (((numInteger * 2) % 10) + Math.trunc((numInteger * 2) / 10)); 
+        } else { 
+          sumPar += numInteger * 2; 
+        } 
+      } else { 
+        sumImpar += numInteger; 
+      } 
+    } 
+    // valido longitud 16 digitos
+    let sumTotal = ((sumPar + sumImpar) % 10) === 0 ? true : false; 
+    if (sumTotal === true && numCardVal.length === 16) {
+      validOne = true;
+      console.log('Número de tarjeta valida');
+    } else {
+      console.log('Número de tarjeta invalida');
+    }
+  }; 
+  // llamamos a la función para validar el número de tarjeta
+  $('#num-card').keyup(isValidCard);
+
+  //  validar fecha de expiración
+
   //  validar cvv
   let cvvValidation = () => {
     let $input = $('#input-cvv');
@@ -25,6 +66,7 @@ function begin() {
       console.log(validThree);
     }
   };
+
   //  validar nombre
   let nameValidation = () => {
     let $input = $('#input-name');
