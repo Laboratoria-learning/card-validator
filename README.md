@@ -25,7 +25,8 @@ de las tarjetas sean correctos, para validar la tarjeta se solicitaran los sigui
 
 Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben incluir las Id que se han usado en el formulario
 
-<script type="text/javascript">
+
+``` js <script type="text/javascript">
 	const config = {
 		cardNumber: cardNumberId,
 		expDate: expDateId,
@@ -34,9 +35,11 @@ Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben
 		subButton: buttonId
 	};
 </script>
+```
 
 + Ejemplo de HTML 
 
+``` html
 <form>
 	<div class="form-group">
 		<label for="cn">Número de tarjeta</label>
@@ -56,6 +59,6 @@ Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben
   </div>
   <input id="buttonId" type="submit" value="Pagar" />
 </form>
-
+```
 
 
