@@ -11,4 +11,5 @@ de las tarjetas sean correctos, para validar la tarjeta se solicitaran los sigui
 
 Validar que los datos sean válidos, hacer test y hacer una libreria.
 
-### Metodología de trabajo
+
+[![npm](https://img.shields.io/npm/v/npm.svg)]()
