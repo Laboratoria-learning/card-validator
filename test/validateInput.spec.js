@@ -10,12 +10,19 @@ global.navigator = {
 };
 
 const validateInput = require('../src/validateInput');
-const config = require('../index.js');
+const validate = require('../index.js');
+
 
 describe('validateInput()', () => {
-  it('Debe existirfuncion', () => {
+  it('Debe funcion lee dom con valores validos', () => {
+    // document.getElementById('minumero').value = '4556474324418380';
     chai.assert.equal(validateInput(), true);
   });
+  it('Debe funcion lee dom con valores invalidos', () => {
+    document.getElementById('minumero').value = '1234';
+    chai.assert.equal(validateInput(), false);
+  });
+
   it('Debe existir input para numero de tarjeta', () => {
     chai.expect(validateInput).to.exist;
   });
