@@ -26,7 +26,8 @@ de las tarjetas sean correctos, para validar la tarjeta se solicitaran los sigui
 Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben incluir las Id que se han usado en el formulario
 
 
-``` js <script type="text/javascript">
+``` js 
+<script type="text/javascript">
 	const config = {
 		cardNumber: cardNumberId,
 		expDate: expDateId,
