@@ -1,5 +1,6 @@
 const Validate = require('./validate');
 const config = require('../index.js');
+
 // const subButton = config.subButton;
 // subButton.addEventListener('click', validateInput);
 
