@@ -1,0 +1,112 @@
+body {
+  background-color: #F4F3EE;
+}
+
+/* Estilos para la barra de navegación */
+.navbar {
+  height: 15vh;
+  background-color: #D9E2E1;
+  border-bottom: 5px solid #DF9496;
+}
+
+.navbar a {
+  font-size: 2.5em;
+  text-decoration: none;
+  color: #306844;
+  font-weight: 600;
+}
+
+/* Estilos para la caja de descripción */
+.info-container {
+  display: table;
+  padding: 1.5em;
+}
+
+.info-text {
+  display: table-cell;
+  vertical-align: middle;
+  padding-bottom: 2em;
+}
+
+.intro {
+  font-size: 1.5em;
+}
+
+/* Estilos para el formulario */
+form {
+  border: 3px solid #727B84;
+  border-radius: 10px;
+  padding: 1.5em;
+  margin-bottom: 3em;
+  background-color: #ECECEC;
+}
+
+form input {
+  box-sizing: border-box;
+  border: 1px solid #C2C2C2;
+  box-shadow: 1px 1px 4px #EBEBEB;
+  border-radius: 3px;
+  padding: 3px;
+  outline: none;
+}
+
+form input:focus {
+  border: 1px solid green;
+}
+
+.btn {
+  display: block;
+  margin: auto;
+}
+
+.credit-card-box .panel-title {
+  display: inline;
+  font-weight: bold;
+}
+
+.credit-card-box .form-control.error {
+  border-color: red;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.credit-card-box label.error {
+  font-weight: bold;
+  padding: 2px 8px;
+  margin-top: 2px;
+  content: 'Credit Card Not Valid';
+  color: $red;
+}
+
+.credit-card-box .payment-errors {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+
+.credit-card-box label {
+  display: block;
+}
+
+.credit-card-box .display-table {
+  display: table;
+}
+
+.credit-card-box .display-tr {
+  display: table-row;
+}
+
+.credit-card-box .display-td {
+  display: table-cell;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.credit-card-box .panel-heading img {
+  min-width: 180px;
+}
+
+.customwidth {
+  max-width: 480px
+}

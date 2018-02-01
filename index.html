@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- - - - - - - - - - - - - - - - - - - - HEAD - - - - - - - - - - - - - - - - - - -  -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="public/css/main.css">
+  <title>Card Validator</title>
+</head>
+<!-- - - - - - - - - - - - - - - - - - - - BODY - - - - - - - - - - - - - - - - - - -  -->
+
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar justify-content-center">
+    <a href="#">
+      <img src="assets/img/logo.png" width="65" height="65" class="d-inline-block align-top" alt="">
+      <span> </span>
+      Card Validator
+    </a>
+  </nav>
+
+  <!-- Descripción de la librería -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8 info-container">
+        <div class="row">
+          <div class="col-12">
+            <p class="info-text text-center intro">
+              Card Validator es un plugin de Javascript que valida datos ingresados en formularios de tarjetas de débito y crédito
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <h4 class="text-center">¿Cómo funciona?</h4>
+            <p class="info-text text-center">
+              Esta librería valida el número de tarjeta de crédito (usando el Algoritmo de Luhn), fecha de vencimiento, codigo de verificación
+              (cvv) y nombre completo que aparece en la tarjeta.
+            </p>
+          </div>
+        </div>
+        <!--         <div class="row">
+          <div class="col-12">
+            <h4 class="text-center">Snippets</h4>
+            <p class="info-text text-center">
+              PENDIENTE
+            </p>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario demo -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-5">
+        <h4 class="text-center">Pruébalo</h4>
+        <form>
+          <!--cn = cardNumber-->
+          <div class="form-group">
+            <label for="cn">Número de tarjeta</label>
+            <input id="cn" name="cn" placeholder="XXXX-XXXX-XXXX-XXXX" maxlength="16" />
+          </div>
+          <!--exp = cardExpiry-->
+          <div class="form-group">
+            <label for="exp">Fecha de vencimiento</label>
+            <input id="exp" name="exp" placeholder="mmaa" />
+          </div>
+          <!--cvv = cardCVC-->
+          <div class="form-group">
+            <label for="cvv">Código de seguridad (CVV)</label>
+            <input id="cvv" name="cvv" placeholder="XXX" maxlength="3" />
+          </div>
+          <div class="form-group">
+            <label for="name">Nombre completo</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <input id="btn" class="btn btn-info disabled" type="submit" value="Pagar" />
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!--
+  <div class="container">
+    <div class="panel panel-default credit-card-box customwidth center-block">
+      <div class="panel-heading display-table">
+        <div class="row display-tr">
+          <h3 class="panel-title display-td">Payment Details</h3>
+          <div class="display-td" id="cardLogoTop">
+            <img class="img-responsive pull-right" src="https://i.imgur.com/gIMFDbp.png">
+          </div>
+        </div>
+      </div>
+      <div class="panel-body">
+        <form role="form" id="payment-form" method="post" action="" onSubmit="return false;">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label for="cardNumber">CARD NUMBER</label>
+                <div class="input-group">
+                  <input type="tel" class="form-control" name="cardNumber" id="cardNumber" placeholder="XXXX-XXXX-XXXX-XXXX" autocomplete="cc-number" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11})$" required autofocus onchange="validar(this.value)" onblur="" onfocus="" />
+                  <span class="input-group-addon">
+                    <i class="fa fa-credit-card" id="cardlogo" style="color:purple;font-size:2rem;"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-7 col-md-7">
+              <div class="form-group">
+                <label for="cardExpiry">
+                  <span class="hidden-xs">EXPIRATION</span>
+                  <span class="visible-xs-inline">EXP</span> DATE</label>
+                <input type="tel" class="form-control" name="cardExpiry" placeholder="MM / YY" autocomplete="cc-exp" required />
+              </div>
+            </div>
+            <div class="col-xs-5 col-md-5 pull-right">
+              <div class="form-group">
+                <label for="cardCVC">CV CODE</label>
+                <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required pattern="^[0-9]{3}"
+                  title="Debe escribir un código válido" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <button class="btn btn-success btn-lg btn-block" type="submit">Next</button>
+            </div>
+          </div>
+          <div class="row" style="display:none;">
+            <div class="col-xs-12">
+              <p class="payment-errors"></p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+  -->
+
+  <!--jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="public/js/json.js"></script>
+  <script src="public/js/index.js"></script>
+  <script src="public/js/app.js"></script>
+</body>
+</html>
