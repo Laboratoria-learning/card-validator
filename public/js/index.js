@@ -1,67 +1,98 @@
-function cnValidation() {
-  var cn = document.getElementById('cn').value;
-  var numberExp = /^[0-9]+$/;
-  var arr = [];
+function isCardValid(cn, exp, cvv, name) {
 
-  /* 1) validar si cn es un numero de 14 digitos*/
-  /* 2) comprobamos si los numeros corresponen a una tarjeta valida*/
-  for (var i = 0; i < cn.length; i++) {
-    arr.push(parseInt(cn[i]));
-  }
-  var reverseCn = arr.reverse();
-  for (var j = 0; j < reverseCn.length; j++) {
-    if (j % 2 === 1) {
-      var duplicate = reverseCn[j] * 2;
-      reverseCn[j] = parseInt(duplicate / 10) + duplicate % 10;
+  /* Función para comprobar si argumento es una cifra */
+  const isNumeric = (number) => {
+    if (/^[0-9]+$/.test(number)) {
+      return true;
+    } else {
+      return false;
     }
-  }
-  var sum = 0;
-  for (var k = 0; k < reverseCn.length; k++) {
-    sum += reverseCn[k];
-  }
-  return sum % 10 === 0 ? alert('tarjeta valida') : alert('tarjeta invalida');
+  };
+
+  /* Función para comprobar si argumento tiene la cantidad de dígitos que corresponde*/
+  const isLengthValid = (number, length) => {
+    number = number.toString();
+    if (number.length === length) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  /* Función para comprobar que número de tarjeta sea válido según Algoritmo de Luhn */
+  const isLuhnValid = (number) => {
+    number = number.toString();
+    let digits = number.split('').reverse();
+    let oddDigits = [];
+    let evenDigits = [];
+
+    digits.forEach(function (digit, index) {
+      if ((index + 1) % 2 !== 0) {
+        oddDigits.push(digit);
+      } else {
+        evenDigits.push(digit);
+      }
+    });
+
+    let s1 = oddDigits.reduce(function (sum, value) {
+      return parseInt(sum) + parseInt(value);
+    });
+
+    let s2 = evenDigits
+      .map(function (digit) {
+        let multiplication = digit * 2;
+        if (multiplication > 9) {
+          let separatedDigits = multiplication.toString().split('');
+          return (
+            parseInt(separatedDigits[0]) + parseInt(separatedDigits[1])
+          );
+        }
+        return multiplication;
+      })
+
+      .reduce(function (sum, value) {
+        return parseInt(sum) + parseInt(value);
+      });
+
+    let result = (s1 + s2).toString();
+    if (result.charAt(result.length - 1) === '0') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  /* Función para validar la fecha de expiración ingresada */
+  const isExpDateValid = (date) => {
+    if (/^[0-9]{4}$/.test(date)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
+  /* Función para validar el nombre del usuario */
+  const isNameValid = (fullname) => {
+    if (/[0-9]/.test(fullname) === true) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  /* Condición para validar todos los datos ingresados */
+  if (isNumeric(cn) && isLengthValid(cn, 16) && isLuhnValid(cn) && isExpDateValid(exp) && isNumeric(cvv) &&
+    isLengthValid(cvv, 3) && isNameValid(name)) {
+      return alert('Los datos ingresados son correctos');
+    } else {
+      return alert ('Error, por favor revise sus datos nuevamente')
+    }
+    
+  /*   isNumeric(cn);
+    isLengthValid(cn, 16);
+    isLuhnValid(cn);
+    isExpDateValid(date);
+    isNumeric(cvv);
+    isLengthValid(cvv, 3);
+    isNameValid(name); */
 }
-
-
-
-
-/*
-var cc_number_saved = '';
-function validar(input) {
-  var elemento = document.getElementById('cardNumber').value;
-  if (/(4[0-9]{12}(?:[0-9]{3})?)/.test(elemento)) {
-    document.getElementById('cardlogo').classList.add('fa-cc-visa');
-    document.getElementById('cardLogoTop').innerHTML = '<img class=\'img-responsive pull-right\' src=\'https://i.imgur.com/iqIDYfz.png\'>';
-  }
-  if (/3[47][0-9]{13}/.test(elemento)) {
-    document.getElementById('cardlogo').classList.add('fa-cc-amex');
-    document.getElementById('cardLogoTop').innerHTML = '<img class=\'img-responsive pull-right\' src=\'https://i.imgur.com/WluzPvZ.png\'>';
-  }
-  if (/5[1-5][0-9]{14}/.test(elemento)) {
-    document.getElementById('cardlogo').classList.add('fa-cc-mastercard');
-    document.getElementById('cardLogoTop').innerHTML = '<img class=\'img-responsive pull-right\' src=\'https://i.imgur.com/1U8OBnM.png\'>';
-  }
-  if (/6(?:011|5[0-9]{2})[0-9]{12}/.test(elemento)) {
-    document.getElementById('cardlogo').classList.add('fa-cc-discover');
-    document.getElementById('cardLogoTop').innerHTML = '<img class=\'img-responsive pull-right\' src=\'https://i.imgur.com/H5lJRwk.png\'>';
-  }
-  if (elemento == 0) {
-    document.getElementById('cardlogo').classList.remove('fa-cc-visa');
-    document.getElementById('cardLogoTop').innerHTML = '<img class=\'img-responsive pull-right\' src=\'https://i.imgur.com/gIMFDbp.png\'>';
-    document.getElementById('cardlogo').classList.remove('fa-cc-amex');
-    document.getElementById('cardlogo').classList.remove('fa-cc-mastercard');
-    document.getElementById('cardlogo').classList.remove('fa-cc-discover');
-  }
-  // Luhn Algorithm
-  var sum = 0;
-  var numdigits = input.length;
-  var parity = numdigits % 2;
-  for (var i = 0; i < numdigits; i++) {
-    var digit = parseInt(input.charAt(i));
-    if (i % 2 == parity) digit *= 2;
-    if (digit > 9) digit -= 9;
-    sum += digit;
-  }
-  return (sum % 10) == 0;
-}
-*/
