@@ -27,6 +27,11 @@
             <i class="material-icons prefix">credit_card</i>
             <input id="num-card" type="text" class="validate" name="cn">
             <label for="icon_prefix">El número de la tarjeta de crédito</label>
+            <div class="message">
+              <i class="icon-red material-icons right">warning</i>
+              <p class="message-red">El número de tarjeta no es válida.
+                <br>Por favor vuelve a ingresar el número.</p>
+            </div>
           </div>
           <div class="center offset-l1 s10 offset-s1 col l4">
             <div class="col s12 l7 valign-wrapper">
@@ -36,6 +41,7 @@
             <div class="date-margin-top offset-s3 col s2 input-field l2">
               <input id="month" type="text" class="datepicker validate" placeholder="06" name="exp">
               <label for="icon_prefix">Mes</label>
+              <i class="icon-red material-icons right">warning</i>
             </div>
             <div class="date-margin-top col s1 l1">
               <p>_</p>
@@ -43,6 +49,7 @@
             <div class="date-margin-top col s3 l2 input-field">
               <input id="year" type="text" class="datepicker validate" placeholder="2020" name="exp">
               <label for="icon_prefix">Año</label>
+              <i class="icon-red material-icons right">warning</i>
             </div>
           </div>
         </div>
@@ -51,11 +58,20 @@
             <i class="material-icons prefix">confirmation_number</i>
             <input id="input-cvv" type="text" class="validate" name="cvv">
             <label for="icon_prefix">Código de validación de 3 dígitos</label>
+            <div class="message">
+              <i class="icon-red material-icons right">warning</i>
+              <p class="message-red">Solo debe ingresar números.
+                <br>No debes de exceder los 3 dígitos.</p>
+            </div>
           </div>
           <div class="center offset-l1 input-field s10 offset-s1 col l5">
             <i class="material-icons prefix">account_circle</i>
             <input id="input-name" type="text" class="capitalize validate" name="name">
             <label for="icon_prefix">Nombre completo</label>
+            <div class="message">
+              <i class="icon-red material-icons right">warning</i>
+              <p class="message-red">Por favor, ingrese su nombre y apellidos completos. (Solo letras)</p>
+            </div>
           </div>
         </div>
         <div class="row">
@@ -65,8 +81,7 @@
         </div>
       </form>
     </div>
-
-  <!--Scripts-->>
+  <!--Scripts-->
     <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendors/materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/data.js"></script>
