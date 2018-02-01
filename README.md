@@ -161,7 +161,7 @@ Ejemplo de snippet, que será modificado para mejorar la librería de validació
 #### Versión móvil
 * Vista desde la ventana del navegador móvil.
 
-![recursos](assets/images/sketch/movil.PNG)
+![recursos](assets/images/sketch/movil.png)
 
 ## Contribuidoras
 
