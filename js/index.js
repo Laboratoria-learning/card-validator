@@ -2,43 +2,13 @@ let validOne = false;
 let validTwo = false;
 let validThree = false;
 let validFour = false;
+let verifiedNumCard;
+let verifiedMonth;
+let verifiedYear;
+let verifiedCvv;
+let verifiedName;
 /*
-// VALIDAR NÚMERO DE TARJETA DE CRÉDITO
-//---------------------------------------------------------------------------------
-let isValidCard = () => {
-  // Ingresamos número de tarjeta Ejemplo:(4551038207641635) validar (usando algoritmo de Luhn),
-  let numCard = $('#num-card'); // 1° llamo a la etiqueta input
-  let numCardVal = numCard.val(); // 2° guarda el valor del input
-  let numArray = numCardVal.split('');
-  let numReverse = numArray.reverse();
-  // variable donde estara almacenado temporalmente el nuevo número convertido a entero
-  let numInteger = 0;
-  let sumPar = 0;
-  let sumImpar = 0;
-  // Se creara un for para iterar cada número de la tarjeta ingresada
-  for (let i = 0; i < numReverse.length; i++) {
-    numInteger = parseInt(numReverse[i]);
-    if ((i + 1) % 2 === 0) {
-      if ((numInteger * 2) >= 10) {
-        sumPar += (((numInteger * 2) % 10) + Math.trunc((numInteger * 2) / 10));
-      } else {
-        sumPar += numInteger * 2;
-      }
-    } else {
-      sumImpar += numInteger;
-    }
-  }
-  // validar longitud 16 digitos
-  let sumTotal = ((sumPar + sumImpar) % 10) === 0 ? true : false;
-  if (sumTotal === true && numCardVal.length === 16) {
-    validOne = true;
-    console.log('Número de tarjeta valida');
-  } else {
-    console.log('Número de tarjeta invalida');
-  }
-};
-// llamamos a la función para validar el número de tarjeta
-$('#num-card').keyup(isValidCard);
+
 
 // VALIDAR FECHA DE EXPIRACIÓN
 //----------------------------------------------------------------------------
@@ -65,6 +35,73 @@ let dateExpiration = () => {
 */
 (function($){
   $.fn.extend({
+    isValidCard : function(inputOne) {
+      // Ingresamos número de tarjeta Ejemplo:(4551038207641635) validar (usando algoritmo de Luhn),
+      let $numCard = inputOne; // 1° llamo a la etiqueta input
+      $numCard.keyup(() => {
+        let $numCardVal = $numCard.val(); // 2° guarda el valor del input
+        let $numArray = $numCardVal.split('');
+        let $numReverse = $numArray.reverse();
+        // variable donde estara almacenado temporalmente el nuevo número convertido a entero
+        let numInteger = 0;
+        let sumPar = 0;
+        let sumImpar = 0;
+        // Se creara un for para iterar cada número de la tarjeta ingresada
+        for (let i = 0; i < $numReverse.length; i++) {
+          numInteger = parseInt($numReverse[i]);
+          if ((i + 1) % 2 === 0) {
+            if ((numInteger * 2) >= 10) {
+              sumPar += (((numInteger * 2) % 10) + Math.trunc((numInteger * 2) / 10));
+            } else {
+              sumPar += numInteger * 2;
+            }
+          } else {
+            sumImpar += numInteger;
+          }
+        }
+        // validar longitud 16 digitos
+        let sumTotal = ((sumPar + sumImpar) % 10) === 0 ? true : false;
+        if (sumTotal === true && $numCardVal.length === 16) {
+          validOne = true;
+          verifiedNumCard = $numCardVal;
+          console.log('Número de tarjeta valida');
+        } else {
+          console.log('Número de tarjeta invalida');
+        }
+      })
+    }
+  });
+  $.fn.extend({
+    dateExpiration : function(inputTwoMonth, inputTwoYear) {
+      let $inputExpirationMonth = inputTwoMonth;
+      let $inputExpirationYear = inputTwoYear;
+      let validationMonth = () => {
+        let $monthExpirationVal = $inputExpirationMonth.val();
+        if ($monthExpirationVal > 0 && $monthExpirationVal <= 12) {
+          validTwo = true;
+          verifiedMonth = $monthExpirationVal;
+          console.log('Fecha correcta');
+        } else {
+          validTwo = false;
+          console.log('Fecha incorrecta');
+        }
+      };
+      let validationYear = () => {
+        let $yearExpirationVal = $inputExpirationYear.val();
+        if ($yearExpirationVal.length === 4 && $yearExpirationVal >= 2018) {
+          validTwo = true;
+          verifiedYear = $yearExpirationVal;
+          console.log('Fecha correcta');
+        } else {
+          validTwo = false;
+          console.log('Fecha incorrecta');
+        }
+      };
+      $inputExpirationMonth.keyup(validationMonth);
+      $inputExpirationYear.keyup(validationYear);
+    }
+  });
+  $.fn.extend({
     cvvValidation : function(inputThree) {
       let $input = inputThree;
       let $father = $input.parent();
@@ -74,6 +111,7 @@ let dateExpiration = () => {
         let testInput = regex.test($inputVal);
         if (testInput === true && $inputVal.length === 3) {
           validThree = true;
+          verifiedCvv = $inputVal;
           console.log(validThree);
         } else if ($inputVal.length > 3 || testInput === false) {
           validThree = false;
@@ -98,12 +136,28 @@ let dateExpiration = () => {
         let testInput = regex.test($inputVal);
         if (testInput === true && $inputVal.length > 2) {
           validFour = true;
+          verifiedName = $inputVal;
           console.log(validFour);
         } else {
           validFour = false;
           console.log(validFour);
         }
       })
+    }
+  });
+  $.fn.extend({
+    userValidation : function(btnValidation) {
+      let $btnValidation = btnValidation;
+      let completeValidation = () => {
+        if (validOne && validTwo && validThree && validFour) {
+          console.log('DATOS CORRECTOS')
+          console.log(verifiedNumCard, verifiedMonth, verifiedYear, verifiedCvv, verifiedName);
+          
+        } else {
+          console.log('ERROR');
+        }
+      };
+      $btnValidation.on('click', completeValidation);
     }
   });
 })(jQuery);
