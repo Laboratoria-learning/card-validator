@@ -4,64 +4,54 @@ $(document).ready(() => {
   $inputExpiryDate = $('#exp');
   $inputSecurityCode = $('#cvv');
   $buttonPay = $('#button-pay');
-
-  /** Función que valida todos los campos y activa el boton */
-  const areAllValidationsPassing = () => {
-    if (validateNumCard && validateNameUser && validateDateCard && validateCvv) {
-      formStateEvent();
-    } else {
-      inactiveButtonPay();
-    }
+  
+  const areAllValidationsPassing = () => {  
+    validateName(name, $(event.target)) && 
+    validateNumberCard(cn, $(event.target), $typeCard) && 
+    validateDate(exp, $(event.target), $message) && 
+    validateCode(cvv, $(event.target));
   };
-
-  /** Funciones de activación y desactivación de boton */
+  
   const formStateEvent = () => {
     $buttonPay.prop('disabled', false);
   };
 
-  const inactiveButtonPay = () => {
-    $buttonPay.prop('disabled', 'disabled');
-  };
-
-
-  /** Eventos*/
-
   $inputCardNumber
     .focus()
-    .on('keyup', function() {
+    .on('keyup', () => {
       $typeCard = $('#type-card');
-      let cn = $(this).val();
+      let cn = $(event.target).val();
 
       /* Llamamos a la funcion, para validar el número de tarjeta, 
       agregar una clase de error y success al input y la imagen que
       corresponda segun el numero que escriba */
-      validateNumberCard(cn, $(this), $typeCard);
+      validateNumberCard(cn, $(event.target), $typeCard);
     })
-    .on('keyup', areAllValidationsPassing);
+    .on('keyup', formStateEvent);
 
   $inputName
-    .on('keyup', function() {
+    .on('keyup', () => {
       let name = $inputName.val();
-      validateName(name, $(this));
+      validateName(name, $(event.target));
     })
-    .on('keyup', areAllValidationsPassing);
+    .on('keyup', formStateEvent);
 
   $inputExpiryDate
     // .on('keypress', onlyNumber(event))
-    .on('keyup', function() {
+    .on('keyup', () => {
       $message = $('#message');
       let exp = $inputExpiryDate.val();
 
       /* Llamamos a la funcion, para validar la fecha de expiración 
       y agregar un mensaje de aprobación o error */
-      validateDate(exp, $(this), $message);
+      validateDate(exp, $(event.target), $message);
     })
-    .on('keyup', areAllValidationsPassing);
+    .on('keyup', formStateEvent);
 
   $inputSecurityCode
-    .on('keyup', function() {
+    .on('keyup', () => {
       let cvv = $inputSecurityCode.val();
-      validateCode(cvv, $(this));
+      validateCode(cvv, $(event.target));
     })
-    .on('keyup', areAllValidationsPassing);
+    .on('keyup', formStateEvent);
 });
