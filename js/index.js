@@ -33,9 +33,9 @@ let dateExpiration = () => {
   }
 };
 */
-(function($){
+(function($) {
   $.fn.extend({
-    isValidCard : function(inputOne) {
+    isValidCard: function(inputOne) {
       // Ingresamos número de tarjeta Ejemplo:(4551038207641635) validar (usando algoritmo de Luhn),
       let $numCard = inputOne; // 1° llamo a la etiqueta input
       $numCard.keyup(() => {
@@ -68,11 +68,11 @@ let dateExpiration = () => {
         } else {
           console.log('Número de tarjeta invalida');
         }
-      })
+      });
     }
   });
   $.fn.extend({
-    dateExpiration : function(inputTwoMonth, inputTwoYear) {
+    dateExpiration: function(inputTwoMonth, inputTwoYear) {
       let $inputExpirationMonth = inputTwoMonth;
       let $inputExpirationYear = inputTwoYear;
       let validationMonth = () => {
@@ -102,7 +102,7 @@ let dateExpiration = () => {
     }
   });
   $.fn.extend({
-    cvvValidation : function(inputThree) {
+    cvvValidation: function(inputThree) {
       let $input = inputThree;
       let $father = $input.parent();
       $input.keyup(() => {
@@ -124,11 +124,11 @@ let dateExpiration = () => {
           validThree = false;
           console.log(validThree);
         }
-      })
+      });
     }
   });
   $.fn.extend({
-    nameValidation : function(inputFour) {
+    nameValidation: function(inputFour) {
       let $input = inputFour;
       $input.keyup(() => {
         let $inputVal = $input.val();
@@ -142,17 +142,16 @@ let dateExpiration = () => {
           validFour = false;
           console.log(validFour);
         }
-      })
+      });
     }
   });
   $.fn.extend({
-    userValidation : function(btnValidation) {
+    userValidation: function(btnValidation) {
       let $btnValidation = btnValidation;
       let completeValidation = () => {
         if (validOne && validTwo && validThree && validFour) {
-          console.log('DATOS CORRECTOS')
+          console.log('DATOS CORRECTOS');
           console.log(verifiedNumCard, verifiedMonth, verifiedYear, verifiedCvv, verifiedName);
-          
         } else {
           console.log('ERROR');
         }
