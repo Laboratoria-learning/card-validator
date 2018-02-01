@@ -28,13 +28,13 @@ Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben
 
 ``` js 
 <script type="text/javascript">
-	const config = {
-		cardNumber: cardNumberId,
-		expDate: expDateId,
-		CVV: cvvId,
-		cardName: nameId,
-		subButton: buttonId
-	};
+  const config = {
+    cardNumber: cardNumberId,
+    expDate: expDateId,
+    CVV: cvvId,
+    cardName: nameId,
+    subButton: buttonId
+  };
 </script>
 ```
 
@@ -42,12 +42,12 @@ Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben
 
 ``` html
 <form>
-	<div class="form-group">
-		<label for="cn">Número de tarjeta</label>
-		<input id="cardNumberId" name="cn" />
+  <div class="form-group">
+    <label for="cn">Número de tarjeta</label>
+    <input id="cardNumberId" name="cn" />
   </div>
   <div class="form-group">
-  	<label for="exp">Fecha de vencimiento</label>
+    <label for="exp">Fecha de vencimiento</label>
     <input id="expDateId" name="exp" />
    </div>
    <div class="form-group">
