@@ -10,6 +10,71 @@
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">cardValidator.js</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
+          <li><a href="demo.html">Demo</a></li>
+          <li><a href="https://github.com/delacruzPamela/card-validator">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <header>
+      <div class="row center-align">
+        <div class="col s10 offset-s1">
+          <img class="img-center" src="assets/images/logo.png">
+          <h1 class="center">cardValidator.js</h1>
+          <h5 class="center">Analice, valide, manipule datos principales para realizar transacciones de una tarjeta de crédito en Javascript. </h5>
+          <br>
+          <br>
+          <hr>
+        </div>
+      </div>
+    </header>
+    <section class="two">
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="icon-block">
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h4 class="center">Pasos para la instalación</h4>
+            <ul>
+              <li><b>1°</b> Clona el siguiente repositorio: <a href="https://github.com/delacruzPamela/card-validator">cardValidator</a></li>
+              <li><b>2°</b> Necesitas enlazar en tu index dónde utilizarás el plugin materialize.min.js jQuery, , app.js, index.js y el JSON que usarás como base de datos data.js
+              <img src="assets/images/2.PNG" alt="script-descargar"></li>
+              <li><b>3°</b> No olvides también enlazar los archivos css: main.css y materialize.min.cssy Material Icons de la siguiente manera: 
+              <br> <img src="assets/images/3.PNG" alt="script-descargar"></li>
+              <li><b>4°</b> Debes asignarle los sgts id's a los inputs que quieres validar : <img src="assets/images/4.PNG" alt="script-descargar"></li>
+              <li><b>5°</b> Éste plugin incluye un archivo data.js dónde está la estructura que debes respetar y los nombres donde pondrás los datos de los usuarios.
+                Las keys que no debes modificar son numCard, month, year, cvv y name, sus valores sí. En el caso de name debes ingresarlo en mayúsculas para evitar errores de validación. <img src="assets/images/5.PNG" alt="script-descargar"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <img src="assets/images/duda.png">
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h4 class="left-align">¿Cómo usarlo?</h4>
+            <ul>
+              <li><b>1°</b> Luego de haber enlazado y asignado todo lo descrito anteriormente, en el documento app.js podrás aplicar las siguientes funciones a tu formulario (form): cvvValidation, nameValidation, isValidCard, dateExpiration y userValidation ingresando como argumento el elemento (etiqueta o botón según corresponda) que necesites de la siguiente manera: <img src="assets/images/6.PNG" alt="script-descargar"></li>
+              <li>Listo! ahora sí puedes disfrutar de nuestro plugin.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <h4 class="center">DEMO</h4>
+    <hr>
     <div class="container center">
       <header class="row title-back">
         <div class="col l12 s8 offset-s2">
@@ -81,6 +146,15 @@
         </div>
       </form>
     </div>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <p class="text-black center">Copyright &#169; cardValidator.js 2018 Pamela - Yanira</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   <!--Scripts-->
     <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
     <script src="vendors/materialize/js/materialize.min.js"></script>
