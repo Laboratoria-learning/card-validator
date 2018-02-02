@@ -1,8 +1,9 @@
-const Validate = require('./validate');
-const config = require('../index.js');
+const Validate = require('./validate.js');
+// const config = require('../index.js');
 
-// const subButton = config.subButton;
-// subButton.addEventListener('click', validateInput);
+const subButton = config.subButton;
+subButton.addEventListener('click', validateInput);
+
 
 function validateInput() {
   let cardNumber = Validate.cardNumber(config.cardNumber.value);
@@ -18,4 +19,4 @@ function validateInput() {
   }
 };
 
-module.exports = validateInput;
+// module.exports = validateInput;
