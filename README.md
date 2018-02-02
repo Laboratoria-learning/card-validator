@@ -23,6 +23,17 @@ de las tarjetas sean correctos, para validar la tarjeta se solicitaran los sigui
 
 ### Modo de Uso
 
++ CDN
+
+
+https://cdn.rawgit.com/IreeRodriguez/card-validator/hipermegared/lib/main.min.js
+
++ NPM
+
+npm install cardvalidatoriv
+
+
+
 Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben incluir las Id que se han usado en el formulario
 
 
