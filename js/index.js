@@ -7,12 +7,18 @@ let verifiedMonth;
 let verifiedYear;
 let verifiedCvv;
 let verifiedName;
+let $numCard;
+let $inputExpirationMonth;
+let $inputExpirationYear;
+let $inputCvv;
+let $inputName;
 
 (function($) {
   $.fn.extend({
     isValidCard: function(inputOne) {
       // Ingresamos número de tarjeta Ejemplo:(4551038207641635) validar (usando algoritmo de Luhn),
-      let $numCard = inputOne; // 1° llamo a la etiqueta input
+      $numCard = inputOne; // 1° llamo a la etiqueta input
+      $numCard.attr("maxlength", 16);
       let $father = $numCard.parent();
       if ($numCard.val() === '') {
         $father.children().last().hide();
@@ -54,8 +60,10 @@ let verifiedName;
   });
   $.fn.extend({
     dateExpiration: function(inputTwoMonth, inputTwoYear) {
-      let $inputExpirationMonth = inputTwoMonth;
-      let $inputExpirationYear = inputTwoYear;
+      $inputExpirationMonth = inputTwoMonth;
+      $inputExpirationYear = inputTwoYear;
+      $inputExpirationMonth.attr("maxlength", 2);
+      $inputExpirationYear.attr("maxlength", 4);
       let $fatherOne = $inputExpirationMonth.parent();
       let $fatherTwo = $inputExpirationYear.parent();
       if ($inputExpirationMonth.val() === '' && $inputExpirationYear.val() === '') {
@@ -94,13 +102,14 @@ let verifiedName;
   });
   $.fn.extend({
     cvvValidation: function(inputThree) {
-      let $input = inputThree;
-      let $father = $input.parent();
-      if ($input.val() === '') {
+      $inputCvv = inputThree;
+      $inputCvv.attr("maxlength", 3);
+      let $father = $inputCvv.parent();
+      if ($inputCvv.val() === '') {
         $father.children().last().hide();
       }
-      $input.keyup(() => {
-        let $inputVal = $input.val();
+      $inputCvv.keyup(() => {
+        let $inputVal = $inputCvv.val();
         let regex = /^[0-9]+$/;
         let testInput = regex.test($inputVal);
         if (testInput === true && $inputVal.length === 3) {
@@ -108,10 +117,9 @@ let verifiedName;
           verifiedCvv = parseInt($inputVal);
           console.log(validThree);
           $father.children().last().hide();
-        } else if ($inputVal.length > 3 || testInput === false) {
+        } else if (testInput === false) {
           validThree = false;
           console.log(validThree);
-          $input.val('');
           $father.children().last().show();
         } else {
           validThree = false;
@@ -123,14 +131,14 @@ let verifiedName;
   });
   $.fn.extend({
     nameValidation: function(inputFour) {
-      let $input = inputFour;
-      let $father = $input.parent();
-      if ($input.val() === '') {
+      $inputName = inputFour;
+      let $father = $inputName.parent();
+      if ($inputName.val() === '') {
         $father.children().last().hide();
       }
-      $input.keyup(() => {
-        let $inputVal = $input.val();
-        let regex = /^([a-zA-Z]{1}[a-zñáéíóú]+[\s]*)+$/;
+      $inputName.keyup(() => {
+        let $inputVal = $inputName.val().toUpperCase();
+        let regex = /^[a-zA-Z ]*$/;
         let testInput = regex.test($inputVal);
         if (testInput === true && $inputVal.length > 2) {
           validFour = true;
@@ -147,7 +155,7 @@ let verifiedName;
   });
   $.fn.extend({
     userValidation: function(btnValidation) {
-      let $btnValidation = btnValidation;
+      $btnValidation = btnValidation;
       let $father = $btnValidation.parent();
       let completeValidation = () => {
         if (validOne && validTwo && validThree && validFour) {
@@ -159,15 +167,24 @@ let verifiedName;
           let name = user.map((item) => item.name)[0];
           console.log(month, year, cvv, name);
           if (verifiedMonth === month && verifiedYear === year && verifiedCvv === cvv && verifiedName === name) {
+            $numCard.val('');
+            $inputExpirationMonth.val('');
+            $inputExpirationYear.val('');
+            $inputCvv.val('');
+            $inputName.val('');
             console.log('DATOS CORRECTOS');
-            $father.append(`
-              <p class="check check-green">Todos los datos son correctos <br> Tarjeta validada.</p>
-            `);
-          } else {
+            validOne = false;
+            validTwo = false;
+            validThree = false;
+            validFour = false;
+          } else if (verifiedMonth !== month || verifiedYear !== year || verifiedCvv !== cvv || verifiedName !== name) {
             console.log('ERROR');
-            $father.append(`
-              <p class="check check-red">Los datos ingresados no inciden.</p>
-            `);
+            alert('Los datos no coinciden');
+            $numCard.val('');
+            $inputExpirationMonth.val('');
+            $inputExpirationYear.val('');
+            $inputCvv.val('');
+            $inputName.val('');
           }
         }
       };
