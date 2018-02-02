@@ -12,13 +12,18 @@ let $inputExpirationMonth;
 let $inputExpirationYear;
 let $inputCvv;
 let $inputName;
+let typeVisa = /^4[0-9]{6,}$/;
+let typeMasterCard = /^5[1-5][0-9]{5,}|222[1-9][0-9]{3,}|22[3-9][0-9]{4,}|2[3-6][0-9]{5,}|27[01][0-9]{4,}|2720[0-9]{3,}$/;
+let typeAmericanExpress = /^3[47][0-9]{5,}$/;
+let typeDinnersClub = /^3(?:0[0-5]|[68][0-9])[0-9]{4,}$/;
+let typeDiscover = /^6(?:011|5[0-9]{2})[0-9]{3,}$/;
 
 (function($) {
   $.fn.extend({
-    isValidCard: function(inputOne) {
+    isValidCard: function(inputOne, inputImage) {
       // Ingresamos número de tarjeta Ejemplo:(4551038207641635) validar (usando algoritmo de Luhn),
       $numCard = inputOne; // 1° llamo a la etiqueta input
-      $numCard.attr("maxlength", 16);
+      $numCard.attr('maxlength', 16);
       let $father = $numCard.parent();
       if ($numCard.val() === '') {
         $father.children().last().hide();
@@ -51,9 +56,28 @@ let $inputName;
           verifiedNumCard = parseInt($numCardVal);
           $father.children().last().hide();
           console.log('Número de tarjeta valida');
+          if ($numCard.val().match(typeVisa)) {
+            console.log('Es tarjeta visa');
+            inputImage.attr('src', 'assets/images/visa.png');
+          } else if ($numCard.val().match(typeMasterCard)) {
+            console.log('Es tarjeta MasterCard');
+            inputImage.attr('src', 'assets/images/masterCard.jpg');
+          } else if ($numCard.val().match(typeDiscover)) {
+            console.log('Es tarjeta Discover');
+            inputImage.attr('src', 'assets/images/discover.png');
+          } else if ($numCard.val().match(typeAmericanExpress)) {
+            console.log('Es tarjeta AmericanExpress');
+            inputImage.attr('src', 'assets/images/americanExpress.png');
+          } else if ($numCard.val().match(typeDinnersClub)) {
+            console.log('Es tarjeta DinnerClub');
+            inputImage.attr('src', 'assets/images/dinnerClub.png');
+          }
         } else {
           console.log('Número de tarjeta invalida');
           $father.children().last().show();
+          $('.check').remove();
+          // colocar imagen por default de tarjeta
+          inputImage.attr('src', 'assets/images/card-icon.png');
         }
       });
     }
@@ -62,8 +86,8 @@ let $inputName;
     dateExpiration: function(inputTwoMonth, inputTwoYear) {
       $inputExpirationMonth = inputTwoMonth;
       $inputExpirationYear = inputTwoYear;
-      $inputExpirationMonth.attr("maxlength", 2);
-      $inputExpirationYear.attr("maxlength", 4);
+      $inputExpirationMonth.attr('maxlength', 2);
+      $inputExpirationYear.attr('maxlength', 4);
       let $fatherOne = $inputExpirationMonth.parent();
       let $fatherTwo = $inputExpirationYear.parent();
       if ($inputExpirationMonth.val() === '' && $inputExpirationYear.val() === '') {
@@ -81,6 +105,7 @@ let $inputName;
           validTwo = false;
           console.log('Fecha incorrecta');
           $fatherOne.children().last().show();
+          $('.check').remove();
         }
       };
       let validationYear = () => {
@@ -94,6 +119,7 @@ let $inputName;
           validTwo = false;
           console.log('Fecha incorrecta');
           $fatherTwo.children().last().show();
+          $('.check').remove();
         }
       };
       $inputExpirationMonth.keyup(validationMonth);
@@ -103,7 +129,7 @@ let $inputName;
   $.fn.extend({
     cvvValidation: function(inputThree) {
       $inputCvv = inputThree;
-      $inputCvv.attr("maxlength", 3);
+      $inputCvv.attr('maxlength', 3);
       let $father = $inputCvv.parent();
       if ($inputCvv.val() === '') {
         $father.children().last().hide();
@@ -125,6 +151,7 @@ let $inputName;
           validThree = false;
           console.log(validThree);
           $father.children().last().hide();
+          $('.check').remove();
         }
       });
     }
@@ -149,6 +176,7 @@ let $inputName;
           validFour = false;
           console.log(validFour);
           $father.children().last().show();
+          $('.check').remove();
         }
       });
     }
@@ -177,9 +205,17 @@ let $inputName;
             validTwo = false;
             validThree = false;
             validFour = false;
+            $('.check').remove();
+            $father.append(`
+              <p class="check check-green">Todos los datos son correctos <br> Tarjeta valida.</p>
+            `);
           } else if (verifiedMonth !== month || verifiedYear !== year || verifiedCvv !== cvv || verifiedName !== name) {
             console.log('ERROR');
-            alert('Los datos no coinciden');
+            $('.check').remove();
+            $father.append(`
+              <p class="check check-red">Los datos ingresados no coinciden.</p>
+            `);
+            // alert('Los datos no coinciden');
             $numCard.val('');
             $inputExpirationMonth.val('');
             $inputExpirationYear.val('');

@@ -18,7 +18,7 @@
       </header>
       <div class="row">
         <div class="col l12 s6 offset-s3 center">
-          <img class="icon-card" src="assets/images/card-icon.png" alt="icon-card">
+          <img id="img-card" class="icon-card" src="assets/images/card-icon.png" alt="icon-card">
         </div>
       </div>
       <form id="form" class="" action="index.html" method="post">
@@ -26,29 +26,29 @@
           <div class="center offset-l1 input-field col s10 offset-s1 l4">
             <i class="material-icons prefix">credit_card</i>
             <input id="num-card" type="text" class="validate" name="cn">
-            <label for="icon_prefix">El número de la tarjeta de crédito</label>
+            <label for="icon_prefix">Card Number</label>
             <div class="message">
               <i class="icon-red material-icons right">warning</i>
               <p class="message-red">El número de tarjeta no es válida.
                 <br>Por favor vuelve a ingresar el número.</p>
             </div>
           </div>
-          <div class="center offset-l1 s10 offset-s1 col l4">
+          <div class="center offset-l1 s8 offset-s1 col l4">
             <div class="col s12 l6 valign-wrapper">
               <i class="material-icons date">date_range</i>
-              <span>Fecha de vencimiento</span>
+              <span>Expiry Date</span>
             </div>
             <div class="date-margin-top offset-s3 col s2 input-field l2">
-              <input id="month" type="text" class="datepicker validate" placeholder="06" name="exp">
-              <label for="icon_prefix">Mes</label>
+              <input id="month" type="text" class="datepicker validate" placeholder="mm" name="exp">
+              <!-- <label for="icon_prefix">Mes</label> -->
               <i class="icon-red material-icons right">warning</i>
             </div>
             <div class="date-margin-top col s1 l1">
-              <p>_</p>
+              <p>-</p>
             </div>
             <div class="date-margin-top col s3 l3 input-field">
-              <input id="year" type="text" class="datepicker validate" placeholder="2020" name="exp">
-              <label for="icon_prefix">Año</label>
+              <input id="year" type="text" class="datepicker validate" placeholder="yyyy" name="exp">
+              <!-- <label for="icon_prefix">Año</label> -->
               <i class="icon-red material-icons right">warning</i>
             </div>
           </div>
@@ -57,7 +57,7 @@
           <div class="center offset-l1 input-field s10 offset-s1 col l4">
             <i class="material-icons prefix">confirmation_number</i>
             <input id="input-cvv" type="text" class="validate" name="cvv">
-            <label for="icon_prefix">Código de validación de 3 dígitos</label>
+            <label for="icon_prefix">CVV</label>
             <div class="message">
               <i class="icon-red material-icons right">warning</i>
               <p class="message-red">Solo debe ingresar números.
@@ -67,7 +67,7 @@
           <div class="center offset-l1 input-field s10 offset-s1 col l5">
             <i class="material-icons prefix">account_circle</i>
             <input id="input-name" type="text" class="capitalize validate" name="name">
-            <label for="icon_prefix">Nombre completo</label>
+            <label for="icon_prefix">Cardholder Name</label>
             <div class="message">
               <i class="icon-red material-icons right">warning</i>
               <p class="message-red">Por favor, ingrese su nombre y apellidos completos. (Solo letras)</p>
@@ -76,7 +76,7 @@
         </div>
         <div class="row">
           <div class="col center s6 offset-s3 l12">
-            <a id="btn-validation" class="btn waves-effect waves-light btn"><i class="material-icons left">check_box</i>Validar</a>
+            <a id="btn-validation" class="btn waves-effect waves-light btn"><i class="material-icons left">check_box</i>Pay</a>
           </div>
         </div>
       </form>
