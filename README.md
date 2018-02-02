@@ -58,7 +58,7 @@ Proporciona utilidades de validación para las entradas de datos de la tarjeta d
 
 ## Instalación
 
-* Clona éste repositorio: `[CardValidator](https://github.com/delacruzPamela/card-validator)`
+* Clona éste repositorio: [CardValidator](https://github.com/delacruzPamela/card-validator)
 
 * Necesitas enlazar en tu index dónde utilizarás el plugin `materialize.min.js` `jQuery`, `app.js`, `inde.js` y el JSON que usarás como base de datos `data.js`
 
