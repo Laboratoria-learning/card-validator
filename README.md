@@ -163,7 +163,7 @@ Proporciona utilidades de validación para las entradas de datos de la tarjeta d
 
 ### Snippets
 
-*Función para validad Número de tarjeta inválido
+* Función para validad Número de tarjeta inválido
     : Esta función valida según el Algoritmo de Luhn que la tarjeta sea válida.
       Así mismo también valida que la longitud sea igual a 16 carácteres. Mientras el usuario ingrese
       datos que no cumplas las condiciones arriba descritas, saldrá un pequeños mensaje
