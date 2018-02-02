@@ -32,6 +32,10 @@ https://cdn.rawgit.com/IreeRodriguez/card-validator/hipermegared/lib/main.min.js
 
 npm install cardvalidatoriv
 
++ Descarga
+
+Decargar archivo main.js de este github 
+
 
 
 Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben incluir las Id que se han usado en el formulario
