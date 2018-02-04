@@ -99,7 +99,7 @@ const validateName = (name, input) => {
   }
 };
 
-/* Función para permitir sólo números*/
+/* Función para validar la fecha de expiración */
 const validateDate = (exp, input) => {
   if (number.test(exp) && exp.length === 4) {
     validateDateCard = true;
