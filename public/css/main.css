@@ -23,6 +23,20 @@ header {
   max-width: 100%;
 }
 
+.container-card {
+  display: flex;
+}
+
+.container-type-card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.type-card {
+  width: 2rem;
+}
+
 /* Styles for registry container */
 
 .center {

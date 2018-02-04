@@ -16,108 +16,130 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
-            <img src="assets/images/card5.png" alt="">
-          </a>
-        <a class="navbar-brand" href="#">ValidateCard</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="#">Demo</a>
-            <a class="nav-item nav-link" href="#">Help</a>
-            
-          </div>
-        </div>
-      </nav>
-  <div class="jumbotron white text-center">
-    <img class="" src="assets/images/card1.png" alt="">
-    <h1 class="display-4 text-center title-principal text-info">ValidateCard.js</h1>
-    <p class="lead text-dark ">ValidateCard.js es una libreria que te permite validar los campos de texto de tu formulario de pago durante una transacción
-      con tarjeta de crédito o débito de una manera simple y sencilla. </p>
-    <hr class="my-4 ">
-    <p class="paragraph">Optimiza tus formularios ahora.</p>
-    <p class="lead">
-      <a class="btn btn-primary btn-lg" href="https://github.com/betsyvies/card-validator" role="button">Descarga</a>
-    </p>
-  </div>
-
-  <div class="container paragraph">
-    <div class="row">
-      <div class="col-lg-6  d-flex align-items-center justify-content-center ">
-        <img class="" src="assets/images/code.png" alt="">
-
-
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="assets/images/card5.png" alt="">
+    </a>
+    <a class="navbar-brand" href="#">ValidateCard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home
+          <span class="sr-only">(current)</span>
+        </a>
+        <a class="nav-item nav-link" href="#">Demo</a>
+        <a class="nav-item nav-link" href="https://github.com/betsyvies/card-validator">GitHub</a>
       </div>
-      <div class="col-lg-6 ">
-        <h3 class="text-info">¿Cómo instalarlo?</h3>
-        <ul class="text-dark">
-          <li>Primero deberás clonar nuestro repositorio
-            <code class="code-style">https://github.com/betsyvies/card-validator</code>
-          </li>
-          <li>
-            <p>Para poder hacer uso de la librería tiene que trabajar con JQUERY.</p>
-
-            <code class="code-style">&lt;script src="https://code.jquery.com/jquery-3.3.1.min.js"&gt;&lt;/script&gt;</code>
-
-          </li>
-          <li>Copia la carpeta js en tu proyecto y enlaza en tu index los archivos app.js y index.js de la siguiente manera</li>
-          <code class="code-style block">
+    </div>
+  </nav>
+  <!-- Information Container -->
+  <section>
+    <div class="jumbotron white text-center">
+      <img class="" src="assets/images/card1.png" alt="">
+      <h1 class="display-4 text-center title-principal text-info">ValidateCard.js</h1>
+      <p class="lead text-dark ">ValidateCard.js es una libreria que te permite validar los campos de texto de tu formulario de pago durante una transacción
+        con tarjeta de crédito o débito de una manera simple y sencilla. </p>
+      <hr class="my-4 ">
+      <p class="paragraph">Optimiza tus formularios ahora.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="https://github.com/betsyvies/card-validator" role="button">Descarga</a>
+      </p>
+    </div>
+  </section>
+  <!-- Installation Container -->
+  <section>
+    <div class="container paragraph">
+      <div class="row">
+        <div class="col-lg-6  d-flex align-items-center justify-content-center ">
+          <img class="" src="assets/images/code.png" alt="">
+        </div>
+        <div class="col-lg-6 ">
+          <h3 class="text-info">¿Cómo instalarlo?</h3>
+          <ul class="text-dark">
+            <li>Primero deberás clonar nuestro repositorio
+              <code class="code-style">https://github.com/betsyvies/card-validator</code>
+            </li>
+            <li>
+              <p>Para poder hacer uso de la librería tiene que trabajar con JQUERY.</p>
+              <code class="code-style">&lt;script src="https://code.jquery.com/jquery-3.3.1.min.js"&gt;&lt;/script&gt;</code>
+            </li>
+            <li>Copia la carpeta js en tu proyecto y enlaza en tu index.html el archivo index.js de la siguiente manera</li>
+            <code class="code-style block">
             &lt;script type="text/javascript" src="js/index.js"&gt;&lt;/script&gt;
           </code>
-          <code class="code-style block">
-            &lt;script type="text/javascript" src="js/app.js"&gt;&lt;/script&gt;
-          </code>
-
-        </ul>
-
+          </ul>
+        </div>
+      </div>
+      <div class="row mt-5 mb-5">
+        <div class="col-lg-6 d-flex align-items-center justify-content-center ">
+          <img src="assets/images/card4.png" alt="">
+        </div>
+        <div class="col-lg-6 text-justify">
+          <h3 class="text-info">¿Cómo valido los campos de texto?</h3>
+          <p class="text-dark">Cambia la referencia de los inputs con los siguientes ids y usa las siguientes funciones.</p>
+          <ul class="text-dark">
+            <li>Número de tarjeta => cn
+              <code class="code-style"> 
+                <br>
+                validateNumberCard(cn, input, images)
+              </code>
+            </li>
+            <li>Nombre de Cliente => name
+              <code class="code-style">
+                <br>
+                validateName(name, input)
+              </code>
+            </li>
+            <li>Fecha de Vencimiento=> exp
+              <code class="code-style">
+                <br>
+                validateDate(exp, input)
+              </code>
+            </li>
+            <li>Código CVV => cvv
+              <code class="code-style">
+                <br>
+                validateCode(cvv, input)
+              </code>
+            </li>
+            <li>La libreria tiene dos estilos de validación para los inputs, para agregarlos copia el siguiente codigo en tu archivo css:
+              <br>
+              <code class="code-style">
+                .error:focus, .error{
+                  box-shadow:0 0 1px 2px #F6CCD0;
+                  border: none;
+                  outline: none;
+                  border: 1px solid #DC3545;
+                } 
+              </code> 
+              <br> 
+              <br>
+              <code class="code-style">
+                  .success:focus, .success{
+                    box-shadow: 0 0 1px 2px #C9E9D0;
+                    border: none;
+                    outline: none;
+                    border: 1px solid #28A745;
+                  }
+              </code>
+            </li>
+            <li>En nuestra demo tenemos predefinido los logos de cuatro tipos de tarjeta : Visa, Mastercard, American Express
+              y Discover que aparecen si el numero de tarjeta esta validado.
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="row mt-5 mb-5">
-      <div class="col-lg-6 d-flex align-items-center justify-content-center ">
-        <img src="assets/images/card4.png" alt="">
-
-
-      </div>
-      <div class="col-lg-6 text-justify">
-        <h3 class="text-info">¿Cómo valido los campos de texto?</h3>
-        <p class="text-dark">Cambia la referencia de los inputs con los siguientes ids</p>
-        <ul class="text-dark">
-
-          <li>Número de tarjeta =>
-            <code class="code-style">cn</code>
-          </li>
-          <li>Nombre de Cliente =>
-            <code class="code-style">name</code>
-          </li>
-          <li>Fecha de Vencimiento=>
-            <code class="code-style">exp</code>
-          </li>
-          <li>Código CVV =>
-            <code class="code-style">cvv</code>
-          </li>
-          <li>La libreria agrega dos estilos de validación :
-            <code class="code-style">.error </code>y
-            <code class="code-style">.success</code>
-          </li>
-          <li>Tiene predefinido los logos de dos tipos de tarjeta : Visa y Mastercard que aparecen si el numero de tarjeta esta
-            validado.</li>
-        </ul>
-
-      </div>
+    <hr>
+    <div class="text-center mt-3">
+      <h2 class="title-principal text-info"> Prueba nuestra Demo</h2>
     </div>
-  </div>
-
-
-
-  <hr>
-  <div class="text-center mt-3">
-    <h2 class="title-principal text-info"> Prueba nuestro Demo</h2>
-  </div>
-
+  </section>
+  <!-- Demo Container -->
   <section>
     <!-- Card Container -->
     <header>
@@ -131,23 +153,19 @@
         </div>
       </div>
     </header>
-
-
-
-
     <section class="demo">
       <!-- Registry Container -->
       <div class="container-fluid center">
         <div class="row">
           <div class="col-xs-12 col-lg-12 container">
             <form action="">
-              <div class="form-group">
-                <div class="col-12">
+              <div class="form-group container-card">
+                <div class="col-9">
                   <label for="cn" class="col-form-label">Card number</label>
                   <input type="text" name="cn" class="form-control inline" id="cn" placeholder="Ex. 4242424242424242" maxlength="16">
-                  <div class="">
-                    <img id="type-card" src="" alt="">
-                  </div>
+                </div>
+                <div class="col-3 container-type-card">
+                  <img id="type-card" class="type-card" src="" alt="">
                 </div>
               </div>
               <div class="form-group">
@@ -164,7 +182,7 @@
                 </div>
                 <div class="col-6">
                   <label for="cvv" class="col-form-label">CVV</label>
-                  <input type="password" name="cvv" class="form-control" id="cvv" placeholder="Ex. 123">
+                  <input type="password" name="cvv" class="form-control" id="cvv" placeholder="Ex. 123" maxlength="4">
                 </div>
               </div>
               <div class="col-12 container-button">
@@ -180,12 +198,12 @@
           </div>
         </div>
       </div>
-      </div>
     </section>
   </section>
-<footer class="bg-dark p-3 text-center">
+  <!-- Footer -->
+  <footer class="bg-dark p-3 text-center">
     <p>Copyright &#169; ValidateCard 2018</p>
-</footer>
+  </footer>
 
   <!-- Import jQuery and Bootstrap.js -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
