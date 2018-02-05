@@ -1,0 +1,128 @@
+body {
+  font-size: 14px;
+}
+
+.title-back {
+  background: rgb(37, 22, 101);
+  height: 70px;
+}
+
+.title {
+  color: #ffff;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.icon-card {
+  margin-bottom: 20px;
+  width: 100px;
+}
+
+.margin {
+  width: 50%;
+}
+
+.btn {
+  background: rgb(227, 111, 5);
+  margin-top: 30px;
+}
+
+.capitalize {
+  text-transform: uppercase;
+}
+
+.date {
+  margin-right: 8px;
+}
+
+.date-margin-top {
+  margin-top: 25px;
+}
+
+.message {
+  border: 1px solid rgb(163, 0, 0);
+  border-radius: 5px;
+  color: rgb(128, 0, 0);
+  font-size: 12px;
+  font-style: italic;
+  margin-bottom: 25px;
+  padding: 0px 15px 8px 15px;
+  width: 90%;
+}
+
+.message-red {
+  width: 90%;
+}
+
+.icon-red {
+  display: inline-block;
+  margin-top: 5%;
+}
+
+.check {
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.check-green {
+  border: 1px solid rgb(0, 194, 89);
+  color: rgb(0, 157, 63);
+}
+
+.check-red {
+  border: 1px solid rgb(189, 0, 0);
+  color: rgb(145, 0, 0);
+}
+
+/* STYLE FOR THE DEMO */
+.img-center {
+  text-align: center;
+  height: 20%;
+  width: 20%;
+}
+
+pre {
+  border: 1px solid rgba(34,34,34,0.2);
+  border-radius: 4px;
+  color: #222;
+  font-size: 14px;
+  padding: 5px 1px;
+  margin: 10px;
+  white-space: pre;
+  overflow-x: auto;
+  line-height: 20px;
+  background: rgba(34,34,34,0.03);
+  font-weight: 100;
+}
+
+.comment {
+  color: rgba(34,34,34,0.5);
+}
+
+.color-blue {
+  color: rgb(25, 76, 124);
+  font-weight: bold;
+}
+
+.color-orange {
+  color: rgb(212, 127, 16);
+}
+
+.token.string {
+  color: #690;
+}
+
+.token.function {
+  color: #DD4A68;
+}
+
+.token.keyword {
+  color: #07a;
+}
+

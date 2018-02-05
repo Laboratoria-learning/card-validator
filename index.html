@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Card Validator</title>
+    <link rel="stylesheet" href="vendors/materialize/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">cardValidator.js</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="#">Home</a></li>
+          <li><a href="demo.html">Demo</a></li>
+          <li><a href="https://github.com/delacruzPamela/card-validator">GitHub</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <header>
+      <div class="row center-align">
+        <div class="col s10 offset-s1">
+          <img class="img-center" src="assets/images/logo.png">
+          <h1 class="center">cardValidator.js</h1>
+          <h5 class="center">Analice, valide, manipule datos principales para realizar transacciones de una tarjeta de crédito en Javascript. </h5>
+          <br>
+          <br>
+          <hr>
+        </div>
+      </div>
+    </header>
+    <section class="two">
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h4 class="center color-blue">Pasos para la instalación</h4>
+            <ul>
+              <li><b class="color-blue">1°</b> Clona el siguiente repositorio: <a href="https://github.com/delacruzPamela/card-validator">cardValidator</a></li>
+              <li><b class="color-blue">2°</b> Necesitas enlazar en tu index dónde utilizarás el plugin materialize.min.js jQuery, , app.js, index.js y el JSON que usarás como base de datos <code>data.js</code>
+                <pre>
+                  <code>
+                    <span><span class="token keyword">&lt;script src=</span><span class="color-orange">"vendors/jquery/jquery-3.2.1.min.js"</span><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                    <span><span class="token keyword">&lt;script src=</span><span class="color-orange">"vendors/materialize/js/materialize.min.js"</span><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                    <span><span class="token keyword">&lt;script type=</span><span class="color-orange">"text/javascript"</span><span class="token keyword"> src=</span><spam class="color-orange">"js/data.js"</spam><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                    <span><span class="token keyword">&lt;script type=</span><span class="color-orange">"text/javascript"</span><span class="token keyword"> src=</span><span class="color-orange">"js/index.js"</span><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                    <span><span class="token keyword">&lt;script type=</span><span class="color-orange">"text/javascript"</span><span class="token keyword"> src=</span><span class="color-orange">"js/app.js"</span><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                  </code> 
+                </pre>
+              </li>
+              <li><b class="color-blue">3°</b> No olvides también enlazar los archivos css: main.css y materialize.min.cssy Material Icons de la siguiente manera: 
+                <pre>
+                  <code>
+                    <span><span class="token keyword">&lt;link rel=</span><span class="color-orange">"stylesheet"</span><span class="token keyword"> href=</span><span class="color-orange">"vendors/materialize/css/materialize.min.css"</span><span class="token keyword">&gt;</span></span>
+                    <span><span class="token keyword">&lt;link href=</span><span class="color-orange">"https://fonts.googleapis.com/icon?family=Material+Icons"</span><span class="token keyword"> rel=</span><span class="color-orange">"stylesheet"</span><span class="token keyword">&gt;</span></span>
+                    <span><span class="token keyword">&lt;link rel=</span><span class="color-orange">"stylesheet"</span><span class="token keyword"> href=</span><span class="color-orange">"css/main.css"</span><span class="token keyword">&gt;</span></span>
+                  </code>
+                </pre>
+              </li>
+              <li><b class="color-blue">4°</b> Debes asignarle los siguientes id's a los inputs que quieres validar : 
+                <pre>
+                  <code>
+                    <span class="token string">1. id="num-card"</span><span class="comment"> // (Card Number): Número de la tarjeta de crédito</span>
+                    <span class="token string">2. id="month"</span><span class="comment"> // (Mes): Fecha de expiración</span>
+                    <span class="token string">3. id="year"</span><span class="comment"> // (Año): Fecha de expiración</span>
+                    <span class="token string">4. id="cvv"</span> <span class="comment"> // (CVV): Código de validación de 3 dígitos</span>
+                    <span class="token string">5. id="name"</span><span class="comment"> // (Name): Nombre completo como aparece en la tarjeta</span>
+                    <span class="token string">6. id="pay"</span><span class="comment"> // (Pay): Botón que validara todos los datos ingresados de los 4 inputs</span>
+                  </code>
+                </pre>  
+              </li>
+              <li><b class="color-blue">5°</b> Éste plugin incluye un archivo data.js dónde está la estructura que debes respetar y los nombres donde pondrás los datos de los usuarios.Las keys que no debes modificar son numCard, month, year, cvv y name, sus valores sí. En el caso de name debes ingresarlo en mayúsculas para evitar errores de validación. 
+                <pre>
+                  <code>
+                    <span class="token keyword">let</span> data = [
+                      {
+                        numCard: 4293875288227864,
+                        month: 01,
+                        year: 2025,
+                        cvv: 564,
+                        name: 'YANIRA ARENAZAS BUENO',
+                      },
+                      {
+                        numCard: 4551038207641635,
+                        month: 07,
+                        year: 2022,
+                        cvv: 565,
+                        name: 'PAMELA DE LA CRUZ LOZANO',
+                      },
+                      {
+                        numCard: 4551708214724851,
+                        month: 11,
+                        year: 2022,
+                        cvv: 566,
+                        name: 'VALERIA VALLES',
+                      },
+                      {
+                        numCard: 4214100119451427,
+                        month: 09,
+                        year: 2019,
+                        cvv: 567,
+                        name: 'ESTRELLA LOPEZ ROJAS',
+                      },
+                      {
+                        numCard: 4557880960617953,
+                        month: 12,
+                        year: 2021,
+                        cvv: 568,
+                        name: 'PAOLA ALVAREZ GONZALES',
+                      },
+                    ];
+                  </code>
+                </pre>  
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="icon-block">
+            <h4 class="center color-blue">¿Cómo usarlo?</h4>
+            <ul>
+              <li><b class="color-blue">1°</b> Luego de haber enlazado y asignado todo lo descrito anteriormente, en el documento app.js podrás aplicar las siguientes funciones a tu formulario (form): cvvValidation, nameValidation, isValidCard, dateExpiration y userValidation ingresando como argumento el elemento (etiqueta o botón según corresponda) que necesites de la siguiente manera: 
+                <pre class=" language-javascript">
+                  <code class=" language-javascript">
+                    <span class="token punctuation">
+                      $ <span class="token keyword">function</span><span> begin() {</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.cvvValidation</span>($(<span class="color-orange">'#cvv'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.nameValidation</span>($(<span class="color-orange">'#name'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.isValidCard</span>($(<span class="color-orange">'#cardvalid'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.dateExpiration</span>($(<span class="color-orange">'#exp'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.dateExpiration</span>($(<span class="color-orange">'#input-cvv'</span><span>));</span><span class="comment"> // como argumento de la función.</span>                      } 
+                      }
+                  </code>
+                </pre>
+              </li>
+              <h4 class="center color-blue">Tarjetas compatibles</h4>
+              <img class ="center" src="assets/images/tarjetas.jpg">
+              <img src="assets/images/duda.png">
+
+              <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.cvvValidation</span>($(<span class="color-orange">'#input-cvv'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+              <li class="center color-blue">Listo! ahora sí puedes disfrutar de nuestro plugin.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="icon-block">
+            
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="icon-block">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <h4 class="center color-blue">DEMO</h4>
+    <hr>
+    <div class="container center">
+      <header class="row title-back">
+        <div class="col l12 s8 offset-s2">
+          <p class="title">Card Validator</p>
+        </div>
+      </header>
+      <div class="row">
+        <div class="col l12 s6 offset-s3 center">
+          <img id="img-card" class="icon-card" src="assets/images/card-icon.png" alt="icon-card">
+        </div>
+      </div>
+      <form id="form" class="" action="index.html" method="post">
+        <div class="row">
+          <div class="center offset-l1 input-field col s10 offset-s1 l4">
+            <i class="material-icons prefix">credit_card</i>
+            <input id="num-card" type="text" class="validate" name="cn">
+            <label for="icon_prefix">Card Number</label>
+            <div class="message">
+              <i class="icon-red material-icons right">warning</i>
+              <p class="message-red">El número de tarjeta no es válida.
+                <br>Por favor vuelve a ingresar el número.</p>
+            </div>
+          </div>
+          <div class="center offset-l1 s8 offset-s1 col l4">
+            <div class="col s12 l6 valign-wrapper">
+              <i class="material-icons date">date_range</i>
+              <span>Expiry Date</span>
+            </div>
+            <div class="date-margin-top offset-s3 col s2 input-field l2">
+              <input id="month" type="text" class="datepicker validate" placeholder="mm" name="exp">
+              <!-- <label for="icon_prefix">Mes</label> -->
+              <i class="icon-red material-icons right">warning</i>
+            </div>
+            <div class="date-margin-top col s1 l1">
+              <p>-</p>
+            </div>
+            <div class="date-margin-top col s3 l3 input-field">
+              <input id="year" type="text" class="datepicker validate" placeholder="yyyy" name="exp">
+              <!-- <label for="icon_prefix">Año</label> -->
+              <i class="icon-red material-icons right">warning</i>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="center offset-l1 input-field s10 offset-s1 col l4">
+            <i class="material-icons prefix">confirmation_number</i>
+            <input id="input-cvv" type="text" class="validate" name="cvv">
+            <label for="icon_prefix">CVV</label>
+            <div class="message">
+              <i class="icon-red material-icons right">warning</i>
+              <p class="message-red">Solo debe ingresar números.
+                <br>No debes de exceder los 3 dígitos.</p>
+            </div>
+          </div>
+          <div class="center offset-l1 input-field s10 offset-s1 col l5">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="input-name" type="text" class="capitalize validate" name="name">
+            <label for="icon_prefix">Cardholder Name</label>
+            <div class="message">
+              <i class="icon-red material-icons right">warning</i>
+              <p class="message-red">Por favor, ingrese su nombre y apellidos completos. (Solo letras)</p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col center s6 offset-s3 l12">
+            <a id="btn-validation" class="btn waves-effect waves-light btn"><i class="material-icons left">check_box</i>Pay</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <p class="text-black center">Copyright &#169; cardValidator.js 2018 Pamela - Yanira</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!--Scripts-->
+    <script src="vendors/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendors/materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+  </body>
+</html>
