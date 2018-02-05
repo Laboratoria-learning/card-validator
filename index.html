@@ -125,22 +125,22 @@
               <li><b class="color-blue">1°</b> Luego de haber enlazado y asignado todo lo descrito anteriormente, en el documento app.js podrás aplicar las siguientes funciones a tu formulario (form): cvvValidation, nameValidation, isValidCard, dateExpiration y userValidation ingresando como argumento el elemento (etiqueta o botón según corresponda) que necesites de la siguiente manera: 
                 <pre class=" language-javascript">
                   <code class=" language-javascript">
-                    $<span class="token punctuation">
-                      <span>function</span> begin() {
-                      <span>(</span><span class="token string">#form</span><span>)</span><span class="token function">.cvvValidation</span><span>/span><span>));</span><span class="comment"> // <input> como argumento de la función.</span>
-                          } 
-                      
-                      (</span><span class="token keyword">document</span><span class="token punctuation">)</span>
-                    <span class="token string">'.ready'</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">validateCreditCard<span class="token punctuation">(</span></span><span class="token keyword">function</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
-                    <span class="token punctuation">{</span>
-                    <span class="token function">alert<span class="token punctuation">(</span></span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">val<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">
+                      $ <span class="token keyword">function</span><span> begin() {</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.cvvValidation</span>($(<span class="color-orange">'#cvv'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.nameValidation</span>($(<span class="color-orange">'#name'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.isValidCard</span>($(<span class="color-orange">'#cardvalid'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.dateExpiration</span>($(<span class="color-orange">'#exp'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
+                        <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.dateExpiration</span>($(<span class="color-orange">'#input-cvv'</span><span>));</span><span class="comment"> // como argumento de la función.</span>                      } 
+                      }
                   </code>
                 </pre>
               </li>
               <h4 class="center color-blue">Tarjetas compatibles</h4>
               <img class ="center" src="assets/images/tarjetas.jpg">
               <img src="assets/images/duda.png">
+
+              <span>(</span><span class="token string">'#form'</span><span>)</span><span class="token function">.cvvValidation</span>($(<span class="color-orange">'#input-cvv'</span><span>));</span><span class="comment"> // como argumento de la función.</span>
               <li class="center color-blue">Listo! ahora sí puedes disfrutar de nuestro plugin.</li>
             </ul>
           </div>
