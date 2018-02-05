@@ -10,7 +10,7 @@
 .demo{
   color: #a9a9a9;
 }
-      
+
 /* Styles for Card container */
 
 header {
@@ -21,6 +21,20 @@ header {
 
 [alt="card"] {
   max-width: 100%;
+}
+
+.container-card {
+  display: flex;
+}
+
+.container-type-card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.type-card {
+  width: 2rem;
 }
 
 /* Styles for registry container */
@@ -49,12 +63,9 @@ header {
   box-shadow: none;
 }
 
-
 .white{
   background-color: white;
 }
-
-
 
 .code-style{
   color: black;
@@ -84,6 +95,19 @@ header {
 footer{
   height: 10vh;
   color: white;
+}
+
+/* Style for Modal */
+
+.container-flex {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.container-text {
+  text-align: center;
+  margin-bottom: 0;
 }
 
 /*Clases de validación*/
