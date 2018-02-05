@@ -60,6 +60,7 @@ $(document).ready(() => {
     .on('keyup', areAllValidationsPassing);
     
   $buttonPay.on('click', function() {
-    alert('Tarjeta Válida');
+    $('#modalDemo').modal();
+    return false;
   });
 });
