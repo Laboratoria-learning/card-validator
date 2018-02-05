@@ -37,20 +37,111 @@
       <div class="row">
         <div class="col s12 m6">
           <div class="icon-block">
+            <h4 class="center color-blue">Pasos para la instalación</h4>
+            <ul>
+              <li><b class="color-blue">1°</b> Clona el siguiente repositorio: <a href="https://github.com/delacruzPamela/card-validator">cardValidator</a></li>
+              <li><b class="color-blue">2°</b> Necesitas enlazar en tu index dónde utilizarás el plugin materialize.min.js jQuery, , app.js, index.js y el JSON que usarás como base de datos <code>data.js</code>
+                <pre>
+                  <code>
+                    <span><span class="token keyword">&lt;script src=</span><span class="color-orange">"vendors/jquery/jquery-3.2.1.min.js"</span><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                    <span><span class="token keyword">&lt;script src=</span><span class="color-orange">"vendors/materialize/js/materialize.min.js"</span><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                    <span><span class="token keyword">&lt;script type=</span><span class="color-orange">"text/javascript"</span><span class="token keyword"> src=</span><spam class="color-orange">"js/data.js"</spam><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                    <span><span class="token keyword">&lt;script type=</span><span class="color-orange">"text/javascript"</span><span class="token keyword"> src=</span><span class="color-orange">"js/index.js"</span><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                    <span><span class="token keyword">&lt;script type=</span><span class="color-orange">"text/javascript"</span><span class="token keyword"> src=</span><span class="color-orange">"js/app.js"</span><span class="token keyword">&gt;&lt;/script&gt;</span></span>
+                  </code> 
+                </pre>
+              </li>
+              <li><b class="color-blue">3°</b> No olvides también enlazar los archivos css: main.css y materialize.min.cssy Material Icons de la siguiente manera: 
+                <pre>
+                  <code>
+                    <span><span class="token keyword">&lt;link rel=</span><span class="color-orange">"stylesheet"</span><span class="token keyword"> href=</span><span class="color-orange">"vendors/materialize/css/materialize.min.css"</span><span class="token keyword">&gt;</span></span>
+                    <span><span class="token keyword">&lt;link href=</span><span class="color-orange">"https://fonts.googleapis.com/icon?family=Material+Icons"</span><span class="token keyword"> rel=</span><span class="color-orange">"stylesheet"</span><span class="token keyword">&gt;</span></span>
+                    <span><span class="token keyword">&lt;link rel=</span><span class="color-orange">"stylesheet"</span><span class="token keyword"> href=</span><span class="color-orange">"css/main.css"</span><span class="token keyword">&gt;</span></span>
+                  </code>
+                </pre>
+              </li>
+              <li><b class="color-blue">4°</b> Debes asignarle los siguientes id's a los inputs que quieres validar : 
+                <pre>
+                  <code>
+                    <span class="token string">1. id="num-card"</span><span class="comment"> // (Card Number): Número de la tarjeta de crédito</span>
+                    <span class="token string">2. id="month"</span><span class="comment"> // (Mes): Fecha de expiración</span>
+                    <span class="token string">3. id="year"</span><span class="comment"> // (Año): Fecha de expiración</span>
+                    <span class="token string">4. id="cvv"</span> <span class="comment"> // (CVV): Código de validación de 3 dígitos</span>
+                    <span class="token string">5. id="name"</span><span class="comment"> // (Name): Nombre completo como aparece en la tarjeta</span>
+                    <span class="token string">6. id="pay"</span><span class="comment"> // (Pay): Botón que validara todos los datos ingresados de los 4 inputs</span>
+                  </code>
+                </pre>  
+              </li>
+              <li><b class="color-blue">5°</b> Éste plugin incluye un archivo data.js dónde está la estructura que debes respetar y los nombres donde pondrás los datos de los usuarios.Las keys que no debes modificar son numCard, month, year, cvv y name, sus valores sí. En el caso de name debes ingresarlo en mayúsculas para evitar errores de validación. 
+                <pre>
+                  <code>
+                    <span class="token keyword">let</span> data = [
+                      {
+                        numCard: 4293875288227864,
+                        month: 01,
+                        year: 2025,
+                        cvv: 564,
+                        name: 'YANIRA ARENAZAS BUENO',
+                      },
+                      {
+                        numCard: 4551038207641635,
+                        month: 07,
+                        year: 2022,
+                        cvv: 565,
+                        name: 'PAMELA DE LA CRUZ LOZANO',
+                      },
+                      {
+                        numCard: 4551708214724851,
+                        month: 11,
+                        year: 2022,
+                        cvv: 566,
+                        name: 'VALERIA VALLES',
+                      },
+                      {
+                        numCard: 4214100119451427,
+                        month: 09,
+                        year: 2019,
+                        cvv: 567,
+                        name: 'ESTRELLA LOPEZ ROJAS',
+                      },
+                      {
+                        numCard: 4557880960617953,
+                        month: 12,
+                        year: 2021,
+                        cvv: 568,
+                        name: 'PAOLA ALVAREZ GONZALES',
+                      },
+                    ];
+                  </code>
+                </pre>  
+              </li>
+            </ul>
           </div>
         </div>
         <div class="col s12 m6">
           <div class="icon-block">
-            <h4 class="center">Pasos para la instalación</h4>
+            <h4 class="center color-blue">¿Cómo usarlo?</h4>
             <ul>
-              <li><b>1°</b> Clona el siguiente repositorio: <a href="https://github.com/delacruzPamela/card-validator">cardValidator</a></li>
-              <li><b>2°</b> Necesitas enlazar en tu index dónde utilizarás el plugin materialize.min.js jQuery, , app.js, index.js y el JSON que usarás como base de datos data.js
-              <img src="assets/images/2.PNG" alt="script-descargar"></li>
-              <li><b>3°</b> No olvides también enlazar los archivos css: main.css y materialize.min.cssy Material Icons de la siguiente manera: 
-              <br> <img src="assets/images/3.PNG" alt="script-descargar"></li>
-              <li><b>4°</b> Debes asignarle los sgts id's a los inputs que quieres validar : <img src="assets/images/4.PNG" alt="script-descargar"></li>
-              <li><b>5°</b> Éste plugin incluye un archivo data.js dónde está la estructura que debes respetar y los nombres donde pondrás los datos de los usuarios.
-                Las keys que no debes modificar son numCard, month, year, cvv y name, sus valores sí. En el caso de name debes ingresarlo en mayúsculas para evitar errores de validación. <img src="assets/images/5.PNG" alt="script-descargar"></li>
+              <li><b class="color-blue">1°</b> Luego de haber enlazado y asignado todo lo descrito anteriormente, en el documento app.js podrás aplicar las siguientes funciones a tu formulario (form): cvvValidation, nameValidation, isValidCard, dateExpiration y userValidation ingresando como argumento el elemento (etiqueta o botón según corresponda) que necesites de la siguiente manera: 
+                <pre class=" language-javascript">
+                  <code class=" language-javascript">
+                    $<span class="token punctuation">
+                      <span>function</span> begin() {
+                      <span>(</span><span class="token string">#form</span><span>)</span><span class="token function">.cvvValidation</span><span>/span><span>));</span><span class="comment"> // <input> como argumento de la función.</span>
+                          } 
+                      
+                      (</span><span class="token keyword">document</span><span class="token punctuation">)</span>
+                    <span class="token string">'.ready'</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token function">validateCreditCard<span class="token punctuation">(</span></span><span class="token keyword">function</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+                    <span class="token punctuation">{</span>
+                    <span class="token function">alert<span class="token punctuation">(</span></span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">val<span class="token punctuation">(</span></span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                  </code>
+                </pre>
+              </li>
+              <h4 class="center color-blue">Tarjetas compatibles</h4>
+              <img class ="center" src="assets/images/tarjetas.jpg">
+              <img src="assets/images/duda.png">
+              <li class="center color-blue">Listo! ahora sí puedes disfrutar de nuestro plugin.</li>
             </ul>
           </div>
         </div>
@@ -58,22 +149,18 @@
       <div class="row">
         <div class="col s12 m6">
           <div class="icon-block">
-            <img src="assets/images/duda.png">
+            
           </div>
         </div>
         <div class="col s12 m6">
           <div class="icon-block">
-            <h4 class="left-align">¿Cómo usarlo?</h4>
-            <ul>
-              <li><b>1°</b> Luego de haber enlazado y asignado todo lo descrito anteriormente, en el documento app.js podrás aplicar las siguientes funciones a tu formulario (form): cvvValidation, nameValidation, isValidCard, dateExpiration y userValidation ingresando como argumento el elemento (etiqueta o botón según corresponda) que necesites de la siguiente manera: <img src="assets/images/6.PNG" alt="script-descargar"></li>
-              <li>Listo! ahora sí puedes disfrutar de nuestro plugin.</li>
-            </ul>
+            
           </div>
         </div>
       </div>
     </section>
     
-    <h4 class="center">DEMO</h4>
+    <h4 class="center color-blue">DEMO</h4>
     <hr>
     <div class="container center">
       <header class="row title-back">
