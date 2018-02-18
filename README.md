@@ -1,56 +1,80 @@
 # Valida datos de tarjetas de crédito
 
-* **Track:** _Common Core_
-* **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_
-* **Unidad:** _Producto final_
+El validador de tarjetas se encargara de confirmar que los datos entregados
+de las tarjetas sean correctos, para validar la tarjeta se solicitaran los siguientes datos.
 
-***
++ Número de tarjeta, verifica por algoritmo de Luhn y que el correspondan a 16 catacteres numericos.
 
-El plugin debe recibir una referencia a un elemento del DOM que contenga
-`<input>`s con los siguientes nombres (atributo `name`):
++ Fecha de Vencimiento, verifica que la fecha tenga el formato correcto y que no esté expirada.
 
-* `cn` (Card Number): El número de la tarjeta de crédito
-* `exp` (Expiry Date): Fecha de expiración
-* `cvv` (Card Verification Value): Código de validación de 3 dígitos
-* `name`: Nombre completo como aparece en la tarjeta
++ Número CVV, verifica que se ingresen datos númericos de 3 caracteres.
 
-## Ejemplo
++ Nombre Completo, verifica que solo se ingresen caracteres alfabeticos
 
-```html
+### Dependencias
+
+[![npm](https://img.shields.io/npm/v/npm.svg)]()
+[![npm](https://img.shields.io/badge/Javascript-ES6-brightgreen.svg)]()
+[![npm](https://img.shields.io/badge/mocha--jsdom-1.1-brightgreen.svg)]()
+[![npm](https://img.shields.io/badge/mocha-5.5.1-brightgreen.svg)]()
+[![npm](https://img.shields.io/badge/chai-4.1.2-brightgreen.svg)]()
+[![npm](https://img.shields.io/badge/browserify-15.2.0-brightgreen.svg)]()
+[![npm](https://img.shields.io/badge/jsdom-11.6.1-brightgreen.svg)]()
+
+### Modo de Uso
+
++ CDN
+
+
+https://cdn.rawgit.com/IreeRodriguez/card-validator/hipermegared/lib/main.min.js
+
++ NPM
+
+npm install cardvalidatoriv
+
++ Descarga
+
+Decargar archivo main.js de este github 
+
+
+
+Para usar esta libreria hay que ingresar el siguiente script, el objeto se deben incluir las Id que se han usado en el formulario
+
+
+``` js 
+<script type="text/javascript">
+  const config = {
+    cardNumber: cardNumberId,
+    expDate: expDateId,
+    CVV: cvvId,
+    cardName: nameId,
+    subButton: buttonId
+  };
+</script>
+```
+
++ Ejemplo de HTML 
+
+``` html
 <form>
   <div class="form-group">
     <label for="cn">Número de tarjeta</label>
-    <input id="cn" name="cn" />
+    <input id="cardNumberId" name="cn" />
   </div>
   <div class="form-group">
     <label for="exp">Fecha de vencimiento</label>
-    <input id="exp" name="exp" />
-  </div>
-  <div class="form-group">
+    <input id="expDateId" name="exp" />
+   </div>
+   <div class="form-group">
     <label for="cvv">CVV</label>
-    <input id="cvv" name="cvv" />
-  </div>
-  <div class="form-group">
+    <input id="cvvId" name="cvv" />
+   </div>
+   <div class="form-group">
     <label for="name">Nombre completo</label>
-    <input id="name" name="name" />
+    <input id="nameId" name="name" />
   </div>
-  <input type="submit" value="Pagar" />
+  <input id="buttonId" type="submit" value="Pagar" />
 </form>
 ```
 
-```js
-const form = document.querySelector('form');
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (validateCardDetails(form)) {
-    console.log('datos válido... enviar...');
-  } else {
-    console.log('datos inválidos');
-  }
-});
-```
-
-A la hora de hacer las validaciones, la librería debería de añadir la clase
-`.error` a los `<input>`s que no pasen la validación, o la clase `.success`
-en caso de que sí pase.

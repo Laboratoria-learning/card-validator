@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example</title>
+  </head>
+  <body>
+    <form>
+      <div class="form-group">
+        <label for="cn">Número de tarjeta</label>
+        <input id="minumero" name="cn" />
+      </div>
+      <div class="form-group">
+        <label for="exp">Fecha de vencimiento</label>
+        <input id="exp" name="exp" />
+      </div>
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input id="cvv" name="cvv" />
+      </div>
+      <div class="form-group">
+        <label for="name">Nombre completo</label>
+        <input id="cname" name="name" />
+      </div>
+      <input id="button" type="submit" value="Pagar" />
+    </form>
+
+    <script type="text/javascript">
+
+      const config = {
+        cardNumber: minumero,
+        expDate: exp,
+        CVV: cvv,
+        cardName: cname,
+        subButton: button
+      };
+
+    </script>
+
+    <script type="text/javascript" src="https://cdn.rawgit.com/IreeRodriguez/card-validator/hipermegared/lib/main.min.js"></script>
+
+  </body>
+</html>

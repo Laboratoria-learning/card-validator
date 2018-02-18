@@ -1,0 +1,32 @@
+{
+  "name": "cardvalidatoriv",
+  "version": "1.0.0",
+  "description": "* **Track:** _Common Core_\r * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_\r * **Unidad:** _Producto final_",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ValeOlivares/card-validator.git"
+  },
+  "keywords": [
+    "card",
+    "credit"
+  ],
+  "author": "Irene, Valentina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ValeOlivares/card-validator/issues"
+  },
+  "homepage": "https://github.com/ValeOlivares/card-validator#readme",
+  "dependencies": {
+    "browserify": "^15.2.0",
+    "chai": "^4.1.2",
+    "jsdom": "^11.6.1",
+    "user": "0.0.0"
+  },
+  "devDependencies": {
+    "mocha-jsdom": "^1.1.0"
+  }
+}
