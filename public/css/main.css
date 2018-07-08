@@ -1,0 +1,128 @@
+/* Gobal */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.demo{
+  color: #a9a9a9;
+}
+
+/* Styles for Card container */
+
+header {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  
+}
+
+[alt="card"] {
+  max-width: 100%;
+}
+
+.container-card {
+  display: flex;
+}
+
+.container-type-card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.type-card {
+  width: 2rem;
+}
+
+/* Styles for registry container */
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.group {
+  display: flex;
+  justify-content: center
+}
+
+.container-button {
+  margin-top: 2rem;
+}
+
+[alt="omise"] {
+  width: 4rem;
+}
+
+.form-control:focus{
+  border-color: none;
+  box-shadow: none;
+}
+
+.white{
+  background-color: white;
+}
+
+.code-style{
+  color: black;
+  background-color: #f5f5f5;
+  padding: .3em .6em;
+}
+
+.block{
+  display: block;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  
+}
+
+.title-principal{
+ 
+  font-weight: 400;
+}
+
+.paragraph{
+  color: rgb(94, 91, 91);
+}
+
+footer{
+  height: 10vh;
+  color: white;
+}
+
+/* Style for Modal */
+
+.container-flex {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.container-text {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/*Clases de validación*/
+/* Clases añadidas */
+
+.error:focus, .error{
+  box-shadow:0 0 1px 2px #F6CCD0;
+  border: none;
+  outline: none;
+  border: 1px solid #DC3545;
+}
+
+.success:focus, .success{
+  box-shadow: 0 0 1px 2px #C9E9D0;
+  border: none;
+  outline: none;
+  border: 1px solid #28A745;
+}
