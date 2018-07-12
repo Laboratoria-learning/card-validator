@@ -13,6 +13,7 @@
 <body>
 
   <form>
+    <br>
     <div class="form-group row">
       <label class="col-2 col-form-labe" for="cn">Número de tarjeta</label>
       <div class="col-10">
@@ -21,8 +22,25 @@
     </div>
     <div class="form-group row">
       <label class="col-2 col-form-labe" for="exp">Fecha de vencimiento</label>
-      <div class="col-10">
-        <input id="exp" name="exp" />
+      <div class="form-group row">
+        <label class="col-5 col-form-labe" for="exp">Mes</label>
+        <select class="form-control col-5" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-group row">
+        <label class="col-5 col-form-labe" for="exp">Año</label>
+        <select class="form-control col-5" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
       </div>
     </div>
     <div class="form-group row">
@@ -37,7 +55,7 @@
         <input id="name" name="name" />
       </div>
     </div>
-    <input type="submit" value="Pagar" />
+    <input type="submit" value="Enviar" />
   </form>
 
   <!-- Scripts -->
