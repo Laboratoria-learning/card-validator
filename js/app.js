@@ -1,18 +1,34 @@
 
 'use strict';
-const btnSend = document.getElementById('btnSend');
 
-btnSend.addEventListener("click", () => {
-  let digMonth = document.getElementById('selectMonth').selectedIndex;
-  console.log(digMonth);
 
+const btnSend = () => { 
+  document.getElementById('btnSend');
+}
+
+const monthFunct = function month(){
+  let selectMonth = document.getElementById("select-month");
+  let valueMonth = selectMonth.value;
+  console.log(valueMonth);
   
-  if (digMonth == null || digMonth == 0) {
+  if (valueMonth === "...") {
     alert('ERROR: Debe seleccionar una opcion del combo box');
     return false;
   }
 
-})
+}
+
+const yearFunct = function year(){
+  let selectYear = document.getElementById("select-year");
+  let valueYear = selectYear.value;
+  console.log(valueYear);
+  
+  if (valueYear === "...") {
+    alert('ERROR: Debe seleccionar una opcion del combo box');
+    return false;
+  }
+
+}
 
 const isValidCard = () => {
 
