@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./assets/assets/bootstrap.min.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <!-- <link rel="stylesheet" href="./css/main.css"> -->
   <title>Document</title>
 </head>
 
 <body>
 
-  <form>
+  <form action="" onsubmit="return validarFormulario()">
     <br>
     <div class="form-group ">
       <label class="col-2 col-form-labe" for="name">Nombre completo</label>
@@ -23,52 +23,55 @@
     <div class="form-group">
       <label class="col-2 col-form-labe" for="cn">Número de tarjeta</label>
       <div class="col-10">
-        <input id="cn" name="cn" />
+        <input id="creditNumber" id="cn" name="cn" />
+        <span id="resul"></span>
       </div>
     </div>
     <div class="form-group ">
       <label class="col-2 col-form-labe" for="exp">Fecha de vencimiento</label>
       <div class="form-group row">
         <label class="col-1 col-form-label text-center" for="exp">Mes</label>
-        <select class="form-control col-1" id="exampleFormControlSelect1">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
+        <select class="form-control col-1" id="select-month">
+          <option class="optMonth" value="...">...</option>         
+          <option class="optMonth" value="1">1</option>
+          <option class="optMonth" value="2">2</option>
+          <option class="optMonth" value="3">3</option>
+          <option class="optMonth" value="4">4</option>
+          <option class="optMonth" value="5">5</option>
+          <option class="optMonth" value="6">6</option>
+          <option class="optMonth" value="7">7</option>
+          <option class="optMonth" value="8">8</option>
+          <option class="optMonth" value="9">9</option>
+          <option class="optMonth" value="10">10</option>
+          <option class="optMonth" value="11">11</option>
+          <option class="optMonth" value="12">12</option>
         </select>
       </div>
       <div class="form-group row">
         <label class="col-1 col-form-label text-center" for="exp">Año</label>
-        <select class="form-control col-1" id="exampleFormControlSelect1">
-          <option>2018</option>
-          <option>2019</option>
-          <option>2020</option>
-          <option>2021</option>
-          <option>2022</option>
-          <option>2023</option>
-          <option>2024</option>
-          <option>2025</option>
-          <option>2026</option>
-          <option>2027</option>
-          <option>2028</option>
-          <option>2029</option>
-          <option>2030</option>
-          <option>2031</option>
-          <option>2032</option>
-          <option>2033</option>
-          <option>2034</option>
-          <option>2035</option>
-          <option>2036</option>
-          <option>2037</option>
-          <option>2038</option>
+        <select class="form-control col-1" id="select-year">
+          <option class="optYear" value="...">...</option>     
+          <option class="optYear" value="2018">2018</option>
+          <option class="optYear" value="2019">2019</option>
+          <option class="optYear" value="2020">2020</option>
+          <option class="optYear" value="2021">2021</option>
+          <option class="optYear" value="2022">2022</option>
+          <option class="optYear" value="2023">2023</option>
+          <option class="optYear" value="2024">2024</option>
+          <option class="optYear" value="2025">2025</option>
+          <option class="optYear" value="2026">2026</option>
+          <option class="optYear" value="2027">2027</option>
+          <option class="optYear" value="2028">2028</option>
+          <option class="optYear" value="2029">2029</option>
+          <option class="optYear" value="2030">2030</option>
+          <option class="optYear" value="2031">2031</option>
+          <option class="optYear" value="2032">2032</option>
+          <option class="optYear" value="2033">2033</option>
+          <option class="optYear" value="2034">2034</option>
+          <option class="optYear" value="2035">2035</option>
+          <option class="optYear" value="2036">2036</option>
+          <option class="optYear" value="2037">2037</option>
+          <option class="optYear" value="2038">2038</option>
         </select>
       </div>
     </div>
@@ -78,7 +81,7 @@
         <input class="col-6 text-center" id="cvv" name="cvv" placeholder="###" />
       </div>
     </div>
-    <input type="submit" value="Enviar" />
+    <input type="button" onClick="isValidCard(),monthFunct(),yearFunct();"  value="Validar Tarjetas" id="btnSend">
   </form>
 
   <!-- Scripts -->
