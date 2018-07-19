@@ -2,9 +2,9 @@
 'use strict';
 
 
-// const btnSend = document.getElementById('btnSend').addEventListener("click", month());
-// btnSend = document.getElementById('btnSend').addEventListener("click", isValidCard);
-
+const btnSend = () => { 
+  document.getElementById('btnSend');
+}
 
 const monthFunct = function month(){
   let selectMonth = document.getElementById("select-month");
