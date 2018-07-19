@@ -1,7 +1,7 @@
 
 'use strict';
 
-const 
+
 // const btnSend = document.getElementById('btnSend').addEventListener("click", month());
 // btnSend = document.getElementById('btnSend').addEventListener("click", isValidCard);
 
