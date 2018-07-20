@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DolceLemus/card-validator.git"
+    "url": "git+https://github.com/Lainix/card-validator.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DolceLemus/card-validator/issues"
+    "url": "https://github.com/Lainix/card-validator/issues"
   },
-  "homepage": "https://github.com/DolceLemus/card-validator#readme",
+  "homepage": "https://github.com/Lainix/card-validator#readme",
   "devDependencies": {
     "mocha": "^5.2.0"
   }
