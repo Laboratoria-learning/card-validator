@@ -1,43 +1,23 @@
-
 'use strict';
-
-
-const btnSend = () => { 
-  document.getElementById('btnSend');
+// validar que la tarjeta solo sean numeros y 16 numeros
+const validateNumCard = (creditNumber) => {
+  creditNumber = creditNumber.replace(' ','');
+  return  /^([0-9]){16}$/.test(creditNumber);
 }
 
-const monthFunct = function month(){
-  let selectMonth = document.getElementById("select-month");
-  let valueMonth = selectMonth.value;
-  console.log(valueMonth);
-  
-  if (valueMonth === "...") {
-    alert('ERROR: Debe seleccionar una opcion del combo box');
-    return false;
-  }
-
+// validar cvv solo sean numeros y 3 digitos
+const validateNumCvv = (cvv) => {
+  cvv = cvv.replace(' ','');
+  return  /^([0-9]){3}$/.test(cvv);
 }
 
-const yearFunct = function year(){
-  let selectYear = document.getElementById("select-year");
-  let valueYear = selectYear.value;
-  console.log(valueYear);
-  
-  if (valueYear === "...") {
-    alert('ERROR: Debe seleccionar una opcion del combo box');
-    return false;
-  }
-
+// Validar nombre que solo contenga letras
+const validateName = (name) => {
+  return /^[a-zA-Z]*$/.test(name);
 }
 
-const isValidCard = () => {
-
-  let creditNumber = document.getElementById('creditNumber').value
-  console.log(creditNumber);
-  let noValido = /\s/;
-  if (noValido.test(creditNumber)) {
-    creditNumber = prompt("Ingresa el numero de tarjeta sin spacios");
-  }
+// Validar los numeros de tarjeta por Lunm
+const isValidCard = (creditNumber) => {
   let creditNumberReverse = (creditNumber.split("")).reverse();
   let pairNumbers = [];
 
@@ -62,9 +42,14 @@ const isValidCard = () => {
     numberValidate += pairNumbers[j];
   }
   if (numberValidate % 10 === 0) {
-    document.getElementById("resul").innerHTML = "Numero de tarjeta: " + creditNumber + " es Valido ";
+    return true;
   } else {
-    document.getElementById("resul").innerHTML = "Numero de tarjeta: " + creditNumber + " es Invalido ";
+    return false
   }
 }
 
+console.log(validateNumCard("4152313380623160"));
+console.log(validateNumCvv("415"));
+console.log(validateName("Elizabeth"));
+console.log(isValidCard("4152313380623160"));
+// 4152313380623160

@@ -1,0 +1,22 @@
+{
+  "name": "card-validator",
+  "version": "1.0.0",
+  "description": "* **Track:** _Common Core_\r * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_\r * **Unidad:** _Producto final_",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha tests/card-validator.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lainix/card-validator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lainix/card-validator/issues"
+  },
+  "homepage": "https://github.com/Lainix/card-validator#readme",
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
