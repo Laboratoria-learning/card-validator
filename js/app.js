@@ -2,7 +2,7 @@
 
 
 // DATE
-const monthFunct = (month, year) => {
+const dateFunct = (month, year) => {
   let today = new Date();
   let year4Dig = today.getFullYear();
   let year2Dig = year4Dig.toString().substr(-2);
@@ -22,6 +22,7 @@ const monthFunct = (month, year) => {
   } else {
     return true;
   }
+}
 // validar que la tarjeta solo sean numeros y 16 numeros
 const validateNumCard = (creditNumber) => {
   creditNumber = creditNumber.replace(' ','');
@@ -38,10 +39,6 @@ const validateNumCvv = (cvv) => {
 const validateName = (name) => {
   return /^[a-zA-Z]*$/.test(name);
 }
-console.log(monthFunct(12,18));
-console.log(monthFunct(13,17));
-console.log(monthFunct("12","18"));
-console.log(monthFunct("13","17"));
 
 
 // Validar los numeros de tarjeta por Lunm
@@ -76,6 +73,10 @@ const isValidCard = (creditNumber) => {
   }
 }
 
+console.log(dateFunct(12,18));
+console.log(dateFunct(13,17));
+console.log(dateFunct("12","18"));
+console.log(dateFunct("13","17"));
 console.log(validateNumCard("4152313380623160"));
 console.log(validateNumCvv("415"));
 console.log(validateName("Elizabeth"));
