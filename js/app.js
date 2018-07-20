@@ -1,3 +1,4 @@
+'use strict';
 // validar que la tarjeta solo sean numeros y 16 numeros
 const validateNumCard = (creditNumber) => {
   creditNumber = creditNumber.replace(' ','');
