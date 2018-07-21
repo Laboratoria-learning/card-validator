@@ -23,6 +23,5 @@ const dateFunct = (month, year) => {
     return false;
   }
 }
-console.log()
 
 module.exports = dateFunct;
