@@ -23,6 +23,7 @@ const dateFunct = (month, year) => {
     return true;
   }
 }
+
 // validar que la tarjeta solo sean numeros y 16 numeros
 const validateNumCard = (creditNumber) => {
   creditNumber = creditNumber.replace(' ','');
@@ -73,12 +74,12 @@ const isValidCard = (creditNumber) => {
   }
 }
 
-console.log(dateFunct(12,18));
-console.log(dateFunct(13,17));
-console.log(dateFunct("12","18"));
-console.log(dateFunct("13","17"));
-console.log(validateNumCard("4152313380623160"));
-console.log(validateNumCvv("415"));
-console.log(validateName("Elizabeth"));
-console.log(isValidCard("4152313380623160"));
+console.log(dateFunct(12,18)); //true
+console.log(dateFunct(13,17));//false
+console.log(dateFunct("12","18"));//true
+console.log(dateFunct("13","17"));//false
+console.log(validateNumCard("4152313380623160"));//true
+console.log(validateNumCvv("415"));//true
+console.log(validateName("Elizabeth"));//true
+console.log(isValidCard("4152313380623160"));//true
 // 4152313380623160
