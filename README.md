@@ -1,64 +1,5 @@
-# Valida datos de tarjetas de crédito
-
-* **Track:** _Common Core_
-* **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_
-* **Unidad:** _Producto final_
-
-***
-## Instrucciones generales
-El plugin debe recibir una referencia a un elemento del DOM que contenga
-`<input>`s con los siguientes nombres (atributo `name`):
-
-* `cn` (Card Number): El número de la tarjeta de crédito
-* `exp` (Expiry Date): Fecha de expiración
-* `cvv` (Card Verification Value): Código de validación de 3 dígitos
-* `name`: Nombre completo como aparece en la tarjeta
-
-### Ejemplo
-
-```html
-<form>
-  <div class="form-group">
-    <label for="cn">Número de tarjeta</label>
-    <input id="cn" name="cn" />
-  </div>
-  <div class="form-group">
-    <label for="exp">Fecha de vencimiento</label>
-    <input id="exp" name="exp" />
-  </div>
-  <div class="form-group">
-    <label for="cvv">CVV</label>
-    <input id="cvv" name="cvv" />
-  </div>
-  <div class="form-group">
-    <label for="name">Nombre completo</label>
-    <input id="name" name="name" />
-  </div>
-  <input type="submit" value="Pagar" />
-</form>
-```
-
-```js
-const form = document.querySelector('form');
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  if (validateCardDetails(form)) {
-    console.log('datos válido... enviar...');
-  } else {
-    console.log('datos inválidos');
-  }
-});
-```
-
-A la hora de hacer las validaciones, la librería debería de añadir la clase
-`.error` a los `<input>`s que no pasen la validación, o la clase `.success`
-en caso de que sí pase.
-
-***
-
 ## Objetivo
-El objetivo principal de la la herramienta será validar los distintos campos de una tarjeta convencional de credito tales como: numero de tarjeta, CVV, fecha de expiracion y nombre del titular.
+El objetivo principal de la la herramienta será validar los distintos campos de una tarjeta convencional de credito tales como: numero de tarjeta, CVV, fecha de expiracion(mm/aa) y nombre del titular.
 
 ## Requerimientos del proyecto proporcionados por el cliente
 
@@ -78,22 +19,17 @@ Para este proyecto se utiliza:
 - Mocha
 - NPM
 
-## Flujo del programa
-
-El usuario deberá ingresar a la página constituida por un form el cual se muestra a continuación.
-
-....
-
-Se le pedirá al usuario ingrese manualmente los campos de Nombre, CVV, Numero constituido por 16 digitos de la tarjeta de crédito y por ultimo se le pedirá elija en el menu desplegable el año y el mes de expiración de su tarjeta (estos dos campos fueron creados de esta manera para reducir el nivel de errores que se puedan cometer durante el proceso de captura).
+## Aplicación
 
 ### Valida el número de tarjeta
 Las validaciones correspondientes a este campo serán las siguientes:
-- El usuario solo podra ingresar 16 digitos 
+- El usuario solo podra ingresar 16 digitos.
 - El campo solo acepta numeros.
+- El campo acepta espacios pero no son tomados en cuenta para el array de validacion.
 
 ### Valida CVV 
 Validaciones del campo:
-- El usuario solo podrá ingresar 3 digitos
+- El usuario solo podrá ingresar 3 digitos.
 - El campo solo acepta numeros.
 
 ### Valida Fecha Expiración
@@ -101,16 +37,24 @@ Campo será dividido en dos secciones: Mes y Año.
 
 **Año**
 
-El campo consiste en una lista de 20 años comenzando desde el año en curso (2018) hasta el 2038. Será en formato "aaaa"
+- Tendrá formato "aa".
+- En caso de que sea menor al año en curso, se retornará un false el cual indicaria que la tarjeta esta expirada.
+- Solo acepta numeros.
 
 **Mes**
 
-El campo consiste en una lista desplegable con los doce meses que integran un año en formato "mm". El usuario solo puede seleccionar uno solo de los numeros. Esta sección esta diseñada de esta manera para reducir el porcentaje de errores.
+- Tendrá formato "mm". 
+- Solo acepta numeros en el rango de 1 al 12
 
 
 ### Valida nombre
 El usuario ingresa nombre y apellidos tal y como se encuentra plasmado en su identifiacion oficial o tarjeta de crédito.
 El campo solo permite qué el usuario:
-- Ingrese un maximo de 60 carácteres.
+- Ingrese un maximo de 50 carácteres.
 - Los carácteres deben de estar constituidos solo por letras.
 - Se permite el uso de espacios.
+
+## DEMO
+
+Una manera de utilizar la libreria.
+
