@@ -1,6 +1,6 @@
 {
   "name": "basic-card-validator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "* **Track:** _Common Core_\r * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_\r * **Unidad:** _Producto final_",
   "main": "index.js",
   "scripts": {
