@@ -1,4 +1,4 @@
-const name = require('../js/name');
+const name = require('../src/name');
 const assert = require('assert');
 
 
