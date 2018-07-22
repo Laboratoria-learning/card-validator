@@ -1,0 +1,24 @@
+{
+  "name": "card-validator",
+  "version": "1.0.0",
+  "description": "* **Track:** _Common Core_\r * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_\r * **Unidad:** _Producto final_",
+  "main": "index.js",
+ 
+  "scripts": {
+    "build": "babel --presets es2015 src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaneshita/card-validator.git"
+  },
+  "author": "yolanda,vanessa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vaneshita/card-validator/issues"
+  },
+  "homepage": "https://github.com/vaneshita/card-validator#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
+  }
+}
