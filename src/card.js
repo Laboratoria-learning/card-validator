@@ -8,7 +8,7 @@
 
   // Validar los numeros de tarjeta por Lunm
   const isValidCard = (creditNumber) => {
-    let creditNumberReverse = (creditNumber.split("")).reverse();
+    let creditNumberReverse = (creditNumber.toString().split("")).reverse();
     let pairNumbers = [];
 
     for (let i = 0; i < creditNumberReverse.length; i++) {
@@ -31,7 +31,7 @@
     for (let j = 0; j < pairNumbers.length; j++) {
       numberValidate += pairNumbers[j];
     }
-    if (numberValidate % 10 === 0) {
+    if (parseint(numberValidate) % 10 === 0) {
       return true;
     } else {
       return false
