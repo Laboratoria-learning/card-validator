@@ -1,6 +1,6 @@
 {
   "name": "basic-card-validator",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "* **Track:** _Common Core_\r * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_\r * **Unidad:** _Producto final_",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Lainix/card-validator.git"
   },
-  "author": "Elizabeth <linkelin08@hotmail.com>, Dulce <dulce.lemus.lara@gmail.com>" ,
+  "author": "Elizabeth <linkelin08@hotmail.com>, Dulce <dulce.lemus.lara@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Lainix/card-validator/issues"
