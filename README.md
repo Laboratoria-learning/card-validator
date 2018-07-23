@@ -58,4 +58,14 @@ El campo solo permite qué el usuario:
 
 Una manera de utilizar la libreria.
 
-https://dolcelemus.github.io/card-validator-DEMO/
+### Instrucciones de uso:
+
+* Instalar npm init
+* Instalar la librería (basic-card-validator).
+* Nuestro cliente nos pidió utilizar  browserify, esto porque requerimos consumir nuestra librería en el navegador.
+* En el siguiente link se describen las instrucciones de como instalar y utilizar browserify.
+(https://blog.npmjs.org/post/112064849860/using-jquery-plugins-with-npm).
+Nota: Browserify solo es compatible con module.export de manera que nuestra librería fue creado de esta manera y no con el método convencional.
+
+* Utilizamos el comando (browserify main.js -o bundle.js) cada vez que deseemos utilizar el archivo bundle.js en comparación con nuestro main.js, como se muestra en el tutorial de el link anterior.
+- Utilizar el ejemplo incluido en el main.js
