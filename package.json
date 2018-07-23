@@ -1,22 +1,31 @@
 {
-  "name": "basic-card-validator",
-  "version": "1.0.10",
-  "description": "* **Track:** _Common Core_\r * **Curso:** _JS Deep Dive: Crea tu propia librería usando JavaScript_\r * **Unidad:** _Producto final_",
+  "name": "card-validator-demo",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
+  "dependencies": {
+    "basic-card-validator": "^1.0.10",
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "mocha tests/card-validator.spec.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lainix/card-validator.git"
+    "url": "git+https://github.com/DolceLemus/card-validator-DEMO.git"
   },
-  "author": "Elizabeth <linkelin08@hotmail.com>, Dulce <dulce.lemus.lara@gmail.com>",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Lainix/card-validator/issues"
+    "url": "https://github.com/DolceLemus/card-validator-DEMO/issues"
   },
-  "homepage": "https://github.com/Lainix/card-validator#readme",
-  "devDependencies": {
-    "mocha": "^5.2.0"
+  "homepage": "https://github.com/DolceLemus/card-validator-DEMO#readme",
+  "browser": {
+    "card": "./node_modules/basic-card-validator/src/card.js",
+    "name": "./node_modules/basic-card-validator/src/name.js",
+    "cvv": "./node_modules/basic-card-validator/src/cvv.js",
+    "date": "./node_modules/basic-card-validator/src/date.js"
+
   }
 }
