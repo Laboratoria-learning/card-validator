@@ -18,16 +18,17 @@
       <label class="col-6 col-form-labe" for="name">Nombre completo</label>
       <div class="col-12">
         <input class="col-10"id="name" name="name" />
+        <span id="resulName"></span>
       </div>
     </div>
     <div class="form-group">
       <label class="col-6 col-form-labe" for="cn">Número de tarjeta</label>
       <div class="col-12">
         <input class="col-7" id="creditNumber" id="cn" name="cn">
-        <span id="resul"></span>
+        <span id="resulCard"></span>
       </div>
     </div>
-    <div class="form-group ">
+    <div class="form-group">
       <label class="col-6 col-form-labe" for="exp">Fecha de vencimiento</label>
       <div class="form-group row">
         <label class="col-2 col-form-label text-center" for="exp">Mes</label>
@@ -46,33 +47,34 @@
           <option class="optMonth" value="11">11</option>
           <option class="optMonth" value="12">12</option>
         </select>
+        <span id="resulDate" class="ml-2 mt-6"></span>
       </div>
       <div class="form-group row">
         <label class="col-2 col-form-label text-center" for="exp">Año</label>
         <select class="form-control col-2" id="select-year">
           <option class="optYear" value="...">...</option>  
-          <option class="optYear" value="2017">2018</option>
-          <option class="optYear" value="2018">2018</option>
-          <option class="optYear" value="2019">2019</option>
-          <option class="optYear" value="2020">2020</option>
-          <option class="optYear" value="2021">2021</option>
-          <option class="optYear" value="2022">2022</option>
-          <option class="optYear" value="2023">2023</option>
-          <option class="optYear" value="2024">2024</option>
-          <option class="optYear" value="2025">2025</option>
-          <option class="optYear" value="2026">2026</option>
-          <option class="optYear" value="2027">2027</option>
-          <option class="optYear" value="2028">2028</option>
-          <option class="optYear" value="2029">2029</option>
-          <option class="optYear" value="2030">2030</option>
-          <option class="optYear" value="2031">2031</option>
-          <option class="optYear" value="2032">2032</option>
-          <option class="optYear" value="2033">2033</option>
-          <option class="optYear" value="2034">2034</option>
-          <option class="optYear" value="2035">2035</option>
-          <option class="optYear" value="2036">2036</option>
-          <option class="optYear" value="2037">2037</option>
-          <option class="optYear" value="2038">2038</option>
+          <option class="optYear" value="2017">17</option>
+          <option class="optYear" value="2018">18</option>
+          <option class="optYear" value="2019">19</option>
+          <option class="optYear" value="2020">20</option>
+          <option class="optYear" value="2021">21</option>
+          <option class="optYear" value="2022">22</option>
+          <option class="optYear" value="2023">23</option>
+          <option class="optYear" value="2024">24</option>
+          <option class="optYear" value="2025">25</option>
+          <option class="optYear" value="2026">26</option>
+          <option class="optYear" value="2027">27</option>
+          <option class="optYear" value="2028">28</option>
+          <option class="optYear" value="2029">29</option>
+          <option class="optYear" value="2030">30</option>
+          <option class="optYear" value="2031">31</option>
+          <option class="optYear" value="2032">32</option>
+          <option class="optYear" value="2033">33</option>
+          <option class="optYear" value="2034">34</option>
+          <option class="optYear" value="2035">35</option>
+          <option class="optYear" value="2036">36</option>
+          <option class="optYear" value="2037">37</option>
+          <option class="optYear" value="2038">38</option>
         </select>
       </div>
     </div>
@@ -80,6 +82,7 @@
       <label class="col-2 col-form-labe text-center" for="cvv">cvv</label>
       <div class="col-4">
         <input class="col-6 text-center" id="cvv" name="cvv" placeholder="###" />
+        <span id="resulCvv"></span>
       </div>
     </div>
     <input type="button" value="Validar Tarjeta" id="btnSend">

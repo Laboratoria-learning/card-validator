@@ -3,24 +3,52 @@
 const btnSend = document.getElementById("btnSend");
 
 btnSend.addEventListener("click",function(){
+    // se manda a llamar cada uno de los modulos de basic-card-validator
     let isValidCard = require('card');
-    let valInput = document.getElementById("creditNumber").value;
+    let validateNumCvv = require('cvv');
+    let validateName = require('name');
+    let dateFunct = require('date');
+    //card
+    let valInputCard = document.getElementById("creditNumber").value;
 
-    if (isValidCard(valInput)=== true){
-        document.getElementById("resul").innerHTML = "Numero de tarjeta: " + creditNumber + " es Valido ";
+    if (isValidCard(valInputCard)=== true){
+        document.getElementById("resulCard").innerHTML = " es Valido ";
     } else {
         alert("Error");
     }
+    // cvv
+    let valInputCvv = document.getElementById("cvv").value;
+
+    if (validateNumCvv(valInputCvv)=== true){
+        document.getElementById("resulCvv").innerHTML = " es Valido ";
+    } else {
+        alert("Error");
+    }
+
+    // name
+    let valInputName= document.getElementById("name").value;
+
+    if (validateName(valInputName)=== true){
+        document.getElementById("resulName").innerHTML = " es Valido ";
+    } else {
+        alert("Error");
+    }
+
+    // date
+    let month = document.getElementById("select-month").value;
+    let year = document.getElementById("select-year").value;
+
+    if (dateFunct(month,year)=== true){
+        document.getElementById("resulDate").innerHTML = " es Valido ";
+    } else {
+        alert("Error");
+    }
+
 });
 
 
   
 
-
-// const cardFunction = basicCardValidator.card;
-// const nameFunction = basicCardValidator.name;
-// const cvvFunction = basicCardValidator.cvv;
-// const dateFunction = basicCardValidator.date;
 
 // console.log(cardFunction(4152313380623160));//true
 // console.log(nameFunction("Dulce Lemus"));//true
@@ -30,7 +58,7 @@ btnSend.addEventListener("click",function(){
 
 
 
-},{"card":2}],2:[function(require,module,exports){
+},{"card":2,"cvv":3,"date":4,"name":5}],2:[function(require,module,exports){
 'use strict';
 // const validateNumCard = (creditNumber) => {
 //   return  /^([0-9]){16}$/.test(creditNumber);
@@ -74,5 +102,52 @@ btnSend.addEventListener("click",function(){
     module.exports = isValidCard;
 
 
+
+},{}],3:[function(require,module,exports){
+'use strict';
+// validar cvv solo sean numeros y 3 digitos
+const validateNumCvv = (cvv) => {
+    return  /^([0-9]){3}$/.test(cvv);
+  }
+
+  module.exports = validateNumCvv;
+
+},{}],4:[function(require,module,exports){
+'use strict';
+
+
+// DATE
+const dateFunct = (month, year) => {
+  let today = new Date();
+  let year4Dig = today.getFullYear();
+  let year2Dig = year4Dig.toString().substr(-2);
+
+  let num2DigMonthTest = /^[0-9]$/.test(month);
+  let num2DigYearTest = /^[0-9]{2}$/.test(year);
+
+  // months
+  if (num2DigMonthTest === true && month < 13) {
+    return true;
+  } else {
+    return false;
+  }
+  // years
+  if (num2DigYearTest === true && year >= year2Dig) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+module.exports = dateFunct;
+},{}],5:[function(require,module,exports){
+'use strict';
+
+// Validar nombre que solo contenga letras
+const validateName = (name) => {
+  return /^[a-zA-Z]+(\s*[a-zA-Z]*)*[a-zA-Z]+$/.test(name);
+}
+
+module.exports = validateName;
 
 },{}]},{},[1]);
