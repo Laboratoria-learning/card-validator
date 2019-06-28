@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./assets/assets/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="./css/main.css"> -->
+  <title>Document</title>
+</head>
+
+<body>
+
+  <form class="col-6 offset-3">
+    <br>
+    <div class="form-group ">
+      <label class="col-6 col-form-labe" for="name">Nombre completo</label>
+      <div class="col-12">
+        <input class="col-10" id="name" name="name" />
+        <span id="resulName"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-6 col-form-labe" for="cn">Número de tarjeta</label>
+      <div class="col-12">
+        <input class="col-7" id="creditNumber" id="cn" name="cn">
+        <span id="resulCard"></span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-6 col-form-labe" for="exp">Fecha de vencimiento</label>
+      <div class="form-group row">
+        <label class="col-2 col-form-label text-center" for="exp">Mes</label>
+        <select class="form-control col-2" id="select-month">
+          <option class="optMonth" value="...">...</option>
+          <option class="optMonth" value="1">1</option>
+          <option class="optMonth" value="2">2</option>
+          <option class="optMonth" value="3">3</option>
+          <option class="optMonth" value="4">4</option>
+          <option class="optMonth" value="5">5</option>
+          <option class="optMonth" value="6">6</option>
+          <option class="optMonth" value="7">7</option>
+          <option class="optMonth" value="8">8</option>
+          <option class="optMonth" value="9">9</option>
+          <option class="optMonth" value="10">10</option>
+          <option class="optMonth" value="11">11</option>
+          <option class="optMonth" value="12">12</option>
+        </select>
+        <span id="resulDate" class="ml-2 mt-6"></span>
+      </div>
+      <div class="form-group row">
+        <label class="col-2 col-form-label text-center" for="exp">Año</label>
+        <select class="form-control col-2" id="select-year">
+          <option class="optYear" value="...">...</option>
+          <option class="optYear" value="2017">17</option>
+          <option class="optYear" value="2018">18</option>
+          <option class="optYear" value="2019">19</option>
+          <option class="optYear" value="2020">20</option>
+          <option class="optYear" value="2021">21</option>
+          <option class="optYear" value="2022">22</option>
+          <option class="optYear" value="2023">23</option>
+          <option class="optYear" value="2024">24</option>
+          <option class="optYear" value="2025">25</option>
+          <option class="optYear" value="2026">26</option>
+          <option class="optYear" value="2027">27</option>
+          <option class="optYear" value="2028">28</option>
+          <option class="optYear" value="2029">29</option>
+          <option class="optYear" value="2030">30</option>
+          <option class="optYear" value="2031">31</option>
+          <option class="optYear" value="2032">32</option>
+          <option class="optYear" value="2033">33</option>
+          <option class="optYear" value="2034">34</option>
+          <option class="optYear" value="2035">35</option>
+          <option class="optYear" value="2036">36</option>
+          <option class="optYear" value="2037">37</option>
+          <option class="optYear" value="2038">38</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-labe text-center" for="cvv">cvv</label>
+      <div class="col-4">
+        <input class="col-6 text-center" id="cvv" name="cvv" placeholder="###" />
+        <span id="resulCvv"></span>
+      </div>
+    </div>
+    <input type="button" value="Validar Tarjeta" id="btnSend">
+  </form>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="./js/assets/bootstrap.min.js"></script>
+  <script src="bundle.js"></script>
+</body>
+
+</html>

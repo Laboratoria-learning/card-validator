@@ -1,0 +1,31 @@
+{
+  "name": "card-validator-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "basic-card-validator": "^1.0.10",
+    "uniq": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DolceLemus/card-validator-DEMO.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DolceLemus/card-validator-DEMO/issues"
+  },
+  "homepage": "https://github.com/DolceLemus/card-validator-DEMO#readme",
+  "browser": {
+    "card": "./node_modules/basic-card-validator/src/card.js",
+    "name": "./node_modules/basic-card-validator/src/name.js",
+    "cvv": "./node_modules/basic-card-validator/src/cvv.js",
+    "date": "./node_modules/basic-card-validator/src/date.js"
+
+  }
+}
